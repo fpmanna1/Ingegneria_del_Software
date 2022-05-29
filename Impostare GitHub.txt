@@ -52,7 +52,7 @@
 		4.2.1.Aprire IntelliJ e creare oppure aprire progetto per accedere all'IDE.
 		4.2.2.Creare nuovo file ".gitignore".
 		4.2.3.Una volta creato il file vi sarà chiesto se lo si vuole aggiungere su Git, per questo file in particolare selezionare "Add".
-		4.2.4.Aprire .gitignore e scrivere: 
+		4.2.4.(SALTARE)Aprire .gitignore e scrivere: 
 			"/build
 			 /.idea
 			 /misc.xml
