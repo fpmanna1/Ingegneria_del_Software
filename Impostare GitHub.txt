@@ -1,0 +1,71 @@
+
+1.Installare Git
+2.Generare una nuova chiave SSH e aggiungerla all'ssh agent
+	2.1.Generazione nuova chiave
+		2.1.1.Aprire Git Bash
+		2.1.2.Inserire il comando: ssh-keygen -t ed25519 -C your_email@example.com
+		2.1.3.Quando compare il messaggio "Enter a file in which to save the key", premere Invio per consentire alla locazione di default.
+		2.1.4.Quando chiesto, inseire la passphrase.
+	2.2.Inserimento chiave SSH all'ssh agent
+		2.2.1.Assicurarsi che l'ssh-agent sia in esecuzione, per farlo manualmente inserire il comando: eval "$(ssh-agent -s)"
+		2.2.2.Se la precedente operazione è andata a buon fine dovrebbe ritornare il valore del pid del processo dell'ssh-agent.
+		2.2.3.Per inserire la chiave SSH privata all'ssh-agent inserire il seguente comando: ssh-add ~/.ssh/id_ed25519
+		2.2.4.Se la precedente operazione è andata a buon fine dovrebbe comparire a schermo la conferma dell'inserimento, 
+			ad esempio: "Identity added: /c/Users/claudio/.ssh/id_ed25519 (claudiopisa9884@gmail.com)
+	2.3.Inserimento della chiave su account GitHub
+		2.3.1.Copiare la chiave SSH pubblica sulla clipboard. Per farlo tramite cli inserire il seguente comando: clip < ~/.ssh/id_ed25519.pub
+		2.3.2.Se la precedente operazione è andata a buon fine la chaive dovrebbe essere nella clipboard, altrimenti indivuduare la directory nascosta ".ssh", 
+			una volta indivuduato il file "id_ed25519.pub" aprirlo con un editor di testo e copiare la chiave sulla clipboard.
+		2.3.1.Accedere al proprio profilo GitHub.
+		2.3.2.Cliccare sulla foto profilo in alto a destra e selezionare la voce "Impostazioni".
+		2.3.3.Nella sezione "Access" presente sulla barra laterale, individuare la voce "SSH and GPG keys".
+		2.3.4.Cliccare su "New SSH key".
+		2.3.5.Inserire nel campo "Title" la descrizione della chiave e successivamente nel campo "Key" incollare la chiave.
+		2.3.6.Cliccare in basso su "Add SSH key" e se richiesto inserire la prorpria password di GitHub.
+	2.4.Verificare la propria connessione SSH
+		2.4.1.Aprire Git Bash
+		2.4.2.Inseire il comando: ssh -T git@github.com
+		2.4.3.Una volta fatto invio potrebbero essere richiesti diversi secondi, infine dovrebbe comparire a schermo il seguente messaggio: 
+			"> The authenticity of host 'github.com (IP ADDRESS)' can't be established.
+			 > RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+			 > Are you sure you want to continue connecting (yes/no)?".
+		2.4.4.Verificare che il fingerprint che compare nel messaggio corrisponda allo stesso fingerprint della chiave pubblica inserita prima su GitHub, se corrisponde digitare "yes".
+		2.4.5.Se la precedente operazione è andata a buon fine dovrebbe comparire il seguente messaggio:
+			"> Hi <<username>>! You've successfully authenticated, but GitHub does not
+			 > provide shell access."
+		2.4.6.Verificare che nel messaggio di ritorno vi sia il vostro username.
+3.Impostare intellij con GitHub
+	3.1.Abilitare Git
+		3.1.1.Aprire IntelliJ e creare oppure aprire progetto per accedere all'IDE.
+		3.1.2.Nella barra degli strumenti individuare la voce "VCS".
+		3.1.3.Cliccare su "Enable Version Control Integration" e selezionare Git.
+		3.1.4.Se le precedente operazione è andata a buon fine dovrebbe comparire nella barra degli strumenti la voce "Git".
+		3.1.5.Cliccare su "Git" e selezionare "Manage remotes..."
+		3.1.6.Cliccare sul pulsante per aggiungere e successivamente inseire rispettivamente come "Name" e "URL" i seguenti: "Origin" 			e "git@github.com:IS-unina/canale_j_z-nirvana.git".
+4.Condividere e modificare progetto su GitHub
+	4.1.Clonare Repository
+		4.1.1.Aprire Git Bash.
+		4.1.2.Inserire il comando: git clone git@github.com:IS-unina/canale_j_z-nirvana.git
+		4.1.3.Se la precedente operazione è andata a buon fine dovreste poter trovare la repository in 									"C:/Users/<<username>>/canale_j_z-nirvana".
+	4.2.Creare .gitignore file
+		4.2.1.Aprire IntelliJ e creare oppure aprire progetto per accedere all'IDE.
+		4.2.2.Creare nuovo file ".gitignore".
+		4.2.3.Una volta creato il file vi sarà chiesto se lo si vuole aggiungere il file su Git, per questo file in particolare 				selezionare "Add".
+		4.2.4.Inserire: 
+			"/build
+			 /.idea
+			 /misc.xml
+			 /modules.xml
+			 /vcs.xml
+			 /workspace.xml
+			 /ScuolaGuidaNirvana.iml"
+	4.3.Commit delle modifiche
+		4.3.1.Individualre voce "Commit" sulla sinistra, oppure Ctrl+K.
+		4.3.2.Assicurarsi che i file da caricare siano spuntati.
+		4.3.3.Inserire la descrizione del commit (non opzionale)
+		4.3.4.Cliccare su "Commit".
+	4.4.Push delle modifiche
+		4.4.1.Assicurarsi di aver eseguito il commit di tutte le modifiche.
+		4.4.2.Aprire la finestra "Push commits" con Ctrl+Shift+K.
+		4.4.3.Cliccare su "Push".
+
