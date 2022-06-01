@@ -14,7 +14,7 @@
 			ad esempio: "Identity added: /c/Users/claudio/.ssh/id_ed25519 (claudiopisa9884@gmail.com)
 	2.3.Inserimento della chiave su account GitHub
 		2.3.1.Copiare la chiave SSH pubblica sulla clipboard. Per farlo tramite cli inserire il seguente comando: clip < ~/.ssh/id_ed25519.pub
-		2.3.2.Se la precedente operazione è andata a buon fine la chaive dovrebbe essere nella clipboard, altrimenti indivuduare la directory nascosta ".ssh", 
+		2.3.2.Se la precedente operazione è andata a buon fine la chiave dovrebbe essere nella clipboard, altrimenti indivuduare la directory nascosta ".ssh", 
 			una volta indivuduato il file "id_ed25519.pub" aprirlo con un editor di testo e copiare la chiave sulla clipboard.
 		2.3.1.Accedere al proprio profilo GitHub.
 		2.3.2.Cliccare sulla foto profilo in alto a destra e selezionare la voce "Impostazioni".
