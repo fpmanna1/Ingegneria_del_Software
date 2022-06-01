@@ -65,9 +65,10 @@
 		4.3.1.Individualre voce "Commit" sulla sinistra, oppure Ctrl+K.
 		4.3.2.Assicurarsi che i file da caricare siano spuntati.
 		4.3.3.Inserire la descrizione del commit (non opzionale)
-		4.3.4.Cliccare su "Commit".
+		4.3.4.Arrivati a questo punto è consigliabile eseguire solo il commit, cliccando su "Commit" e non "Commit e Push", in modo tale da 				separare le due operazioni e eseguire la push al punto 4.4, solo qualora si è certi che tutte le modifiche utili siano commissionate.
 	4.4.Push delle modifiche
-		4.4.1.Assicurarsi di aver eseguito il commit di tutte le modifiche.
+		4.4.1.Assicurarsi di aver eseguito il commit di tutte le modifiche, eseguendo il punto 4.3.
 		4.4.2.Aprire la finestra "Push commits" con Ctrl+Shift+K.
-		4.4.3.Cliccare su "Push".
+		4.4.3.A questo punto spuntare i file desiderati e cliccare su "Push".
+
 
