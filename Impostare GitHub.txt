@@ -41,7 +41,7 @@
 		3.1.3.Cliccare su "Enable Version Control Integration" e selezionare Git.
 		3.1.4.Se le precedente operazione è andata a buon fine dovrebbe comparire nella barra degli strumenti la voce "Git".
 		3.1.5.Cliccare su "Git" e selezionare "Manage remotes..."
-		3.1.6.Cliccare sul pulsante per aggiungere e successivamente inseire rispettivamente come "Name" e "URL" i seguenti: 
+		3.1.6.Cliccare sul pulsante per aggiungere e successivamente inserire rispettivamente come "Name" e "URL" i seguenti: 
 			"Origin" e "git@github.com:IS-unina/canale_j_z-nirvana.git".
 4.Condividere e modificare progetto su GitHub
 	4.1.Clonare Repository
