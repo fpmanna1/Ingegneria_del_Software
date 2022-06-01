@@ -29,7 +29,7 @@
 			"> The authenticity of host 'github.com (IP ADDRESS)' can't be established.
 			 > RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 			 > Are you sure you want to continue connecting (yes/no)?".
-		2.4.4.Verificare che il fingerprint che compare nel messaggio corrisponda allo stesso fingerprint della chiave pubblica inserita prima su GitHub, se 				corrisponde digitare "yes".
+		2.4.4.Verificare che il fingerprint che compare nel messaggio corrisponda allo stesso fingerprint della chiave pubblica inserita precedentemente sul proprio profilo GitHub, se corrisponde digitare "yes".
 		2.4.5.Se la precedente operazione è andata a buon fine dovrebbe comparire il seguente messaggio:
 			"> Hi <<username>>! You've successfully authenticated, but GitHub does not
 			 > provide shell access."
