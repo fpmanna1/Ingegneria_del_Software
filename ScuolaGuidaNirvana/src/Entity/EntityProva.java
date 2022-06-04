@@ -1,13 +1,13 @@
-package Boundary;
+package Entity;
 
 import java.util.Date;
 
-public class BoundaryProva
+public class EntityProva
 {
-    public Date data;
-    boolean esito;
+    public Date    data;
+    public boolean esito;
 
-    public BoundaryProva(Date data, boolean esito) {
+    public EntityProva(Date data, boolean esito) {
         //TODO
     }
 
