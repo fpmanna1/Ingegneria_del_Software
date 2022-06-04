@@ -1,14 +1,16 @@
-public class Istruttore
+package Boundary;
+
+public class BoundaryIstruttore
 {
     public String nome;
     public String cognome;
     public String eMail;
     public String telefono;
 
-    public Istruttore()
+    public BoundaryIstruttore()
     {}
 
-    public Istruttore(String nome, String cognome, String eMail, String telefono)
+    public BoundaryIstruttore(String nome, String cognome, String eMail, String telefono)
     {
         //TODO
     }
@@ -44,4 +46,5 @@ public class Istruttore
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
 }

@@ -1,11 +1,13 @@
+package Boundary;
+
 import java.util.Date;
 
-public class Prova
+public class BoundaryProva
 {
     public Date data;
     boolean esito;
 
-    public Prova(Date data, boolean esito) {
+    public BoundaryProva(Date data, boolean esito) {
         //TODO
     }
 

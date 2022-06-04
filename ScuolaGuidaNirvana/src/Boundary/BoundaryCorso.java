@@ -1,9 +1,10 @@
-public class Corso
-{
+package Boundary;
+
+public class BoundaryCorso {
     public String tipoPatente;
 
-    public Corso(String tipoPatente) {
-       //TODO
+    public BoundaryCorso(String tipoPatente) {
+        //TODO
     }
 
     public String getTipoPatente() {

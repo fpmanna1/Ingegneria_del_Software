@@ -1,6 +1,8 @@
+package Boundary;
+
 import java.util.Date;
 
-public class Cliente
+public class BoundaryCliente
 {
     public String nome;
     public String cognome;
@@ -11,10 +13,10 @@ public class Cliente
     public String cap;
     public String patenteDaConseguire;
 
-    public Cliente()
+    public BoundaryCliente()
     {}
-    
-    public Cliente(
+
+    public BoundaryCliente(
             String nome,
             String cognome,
             Date dataNascita,
@@ -91,3 +93,4 @@ public class Cliente
     }
 
 }
+

@@ -1,20 +1,22 @@
+package Boundary;
+
+import java.time.Clock;
+import java.time.Duration;
 import java.util.Date;
-import java.time.*;
 
-
-
-public class LezioneGuida
+public class BoundaryLezioneGuida
 {
     public Date data;
     public Clock ora;
-    public final Duration durata = Duration.ofHours(2);
+    //public final Duration durata = Duration.ofHours(2);
+    public final int durata = 2;
     public String tipoPatente;
 
 
-    public LezioneGuida()
+    public BoundaryLezioneGuida()
     {}
 
-    public LezioneGuida(Date data, Clock ora, String tipoPatente)
+    public BoundaryLezioneGuida(Date data, Clock ora, String tipoPatente)
     {
         //TODO
     }
@@ -35,7 +37,11 @@ public class LezioneGuida
         this.ora = ora;
     }
 
-    public Duration getDurata() {
+    /*public Duration getDurata() {
+        return durata;
+    }*/
+
+    public int gerDurata(){
         return durata;
     }
 

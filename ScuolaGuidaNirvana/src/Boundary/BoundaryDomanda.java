@@ -1,6 +1,8 @@
+package Boundary;
+
 import java.io.File;
 
-public class Domanda
+public class BoundaryDomanda
 {
     public File figura;
     public String tema;
@@ -8,7 +10,7 @@ public class Domanda
     public String rispostaCorretta;
 
 
-    public Domanda(File figura, String tema, String formulazione, String rispostaCorretta) {
+    public BoundaryDomanda(File figura, String tema, String formulazione, String rispostaCorretta) {
         //TODO
     }
 
