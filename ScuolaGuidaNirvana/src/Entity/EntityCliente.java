@@ -7,14 +7,11 @@ public class EntityCliente
     private String nome;
     private String cognome;
     private Date   dataNascita;
+    private String eMail;
     private String via;
     private String civico;
     private String cap;
     private String patenteDaConseguire;
-    private String eMail;
-
-    public EntityCliente()
-    {}
 
     public EntityCliente(
             String  nome,
@@ -26,7 +23,14 @@ public class EntityCliente
             String  cap,
             String  patenteDaConseguire)
     {
-        //TODO
+        this.nome = nome;
+        this.cognome = cognome;
+        this.dataNascita = dataNascita;
+        this.eMail = eMail;
+        this.via = via;
+        this.civico = civico;
+        this.cap = cap;
+        this.patenteDaConseguire = patenteDaConseguire;
     }
 
     public String getNome() {
