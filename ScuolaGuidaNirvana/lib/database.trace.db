@@ -1,0 +1,282 @@
+2022-06-09 01:11:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES(1, 'Kurt', 'Cobain', 20/02/1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22018-212]
+2022-06-09 01:11:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES(2, 'Dave', 'Grohl', 14/01/1969, 'dave.grohl69@gmail.com', 'Gable Dr Encino', 172, 91316, 'A2') [22018-212]
+2022-06-09 01:11:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES(3, 'Krist', 'Novoselic', 16/05/1965, 'krist.novo65@gmail.com', 'S Lucile St', 173, 98148, 'AM') [22018-212]
+2022-06-09 01:13:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 20/02/1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22018-212]
+2022-06-09 01:13:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 20/02/1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22018-212]
+2022-06-09 01:13:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:13:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "-1949 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 20-02-1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22018-212]
+2022-06-09 01:14:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 20/02/1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22018-212]
+2022-06-09 01:15:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', 171, 98112, 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:15:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:15:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:15:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:15:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "20/02/1967"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', '20/02/1967', 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NumberFormatException: For input string: "20/02/"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-09 01:15:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "0 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 20/02/1967, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22018-212]
+2022-06-09 01:16:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "TO_DATE" not found; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', TO_DATE('20/02/1967'), 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [90022-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readFunction(Parser.java:3894)
+	at org.h2.command.Parser.readTerm(Parser.java:5227)
+	at org.h2.command.Parser.readFactor(Parser.java:3440)
+	at org.h2.command.Parser.readSum(Parser.java:3427)
+	at org.h2.command.Parser.readConcat(Parser.java:3392)
+	at org.h2.command.Parser.readCondition(Parser.java:3177)
+	at org.h2.command.Parser.readExpression(Parser.java:3093)
+	at org.h2.command.Parser.readExpressionOrDefault(Parser.java:3079)
+	at org.h2.command.Parser.parseValuesForCommand(Parser.java:1800)
+	at org.h2.command.Parser.parseInsert(Parser.java:1671)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-09 01:18:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "1945 (CLIENTE: ""DATANASCITA"" DATE)"; SQL statement:
+INSERT INTO CLIENTE VALUES('AB345678', 'Kurt', 'Cobain', 1967-02-20, 'kurt.cobain67@gmail.com', 'Lake Washington Blvd', '171', '98112', 'A1') [22018-212]
+2022-06-09 01:22:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'CD91234\\00a0\\00a0\\00a0' (10)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:22:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'CD91234\\00a0\\00a0\\00a0' (10)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:22:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF12345\\00a0\\00a0\\00a0\\00a0\\00a0' (12)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:22:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF12345\\00a0\\00a0\\00a0\\00a0\\00a0' (12)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:23:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF678912\\00a0\\00a0\\00a0' (11)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:23:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF678912\\00a0\\00a0\\00a0' (11)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:23:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF67891\\00a0\\00a0\\00a0\\00a0\\00a0' (12)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
+2022-06-09 01:23:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NUMEROCARTA CHARACTER(8)": "U&'EF67891\\00a0\\00a0\\00a0\\00a0\\00a0' (12)"; SQL statement:
+UPDATE "PUBLIC"."CLIENTE" SET "NUMEROCARTA"=? ,"NOME"=? ,"COGNOME"=? ,"DATANASCITA"=? ,"EMAIL"=? ,"VIA"=? ,"CIVICO"=? ,"CAP"=? ,"PATENTEDACONSEGUIRE"=?  WHERE "NUMEROCARTA"=? [22001-212]
