@@ -7,12 +7,12 @@ public class EntityLezioneGuida
 {
     //public Clock ora;
     //public final Duration durata = Duration.ofHours(2);
-    public Date      data;
-    public String    ora;
-    public final int durata = 2;
-    public String    tipoPatente;
-    public String    oraPrenotazione;
-    public Date      dataPrenotazione;
+    private Date      data;
+    private String    ora;
+    private final int durata = 2;
+    private String    tipoPatente;
+    private String    oraPrenotazione;
+    private Date      dataPrenotazione;
 
     public EntityLezioneGuida()
     {}

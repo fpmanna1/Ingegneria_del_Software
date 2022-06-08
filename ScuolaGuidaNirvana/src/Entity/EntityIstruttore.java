@@ -5,12 +5,12 @@ import java.util.Date;
 
 public class EntityIstruttore
 {
-    public String nome;
-    public String cognome;
-    public String oraLibera;
-    public Date   giornoLibero;
-    public String eMail;
-    public String telefono;
+    private String nome;
+    private String cognome;
+    private String oraLibera;
+    private Date   giornoLibero;
+    private String eMail;
+    private String telefono;
 
     public EntityIstruttore()
     {}

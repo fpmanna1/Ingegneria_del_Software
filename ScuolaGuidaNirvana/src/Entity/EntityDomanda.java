@@ -4,10 +4,10 @@ import java.io.File;
 
 public class EntityDomanda
 {
-    public String formulazione;
-    public String tema;
-    public File   figura;
-    public String rispostaCorretta;
+    private String formulazione;
+    private String rispostaCorretta;
+    private File   figura;
+    private String tema;
 
     public String getFormulazione() {
         return formulazione;

@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class EntityProva
 {
-    public Date    data;
-    public boolean esito;
+    private Date    data;
+    private boolean esito;
 
     public EntityProva(Date data, boolean esito) {
         //TODO

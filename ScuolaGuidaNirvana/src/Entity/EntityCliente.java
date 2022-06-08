@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class EntityCliente
 {
-    public String nome;
-    public String cognome;
-    public Date   dataNascita;
-    public String via;
-    public String civico;
-    public String cap;
-    public String patenteDaConseguire;
-    public String eMail;
+    private String nome;
+    private String cognome;
+    private Date   dataNascita;
+    private String via;
+    private String civico;
+    private String cap;
+    private String patenteDaConseguire;
+    private String eMail;
 
     public EntityCliente()
     {}
