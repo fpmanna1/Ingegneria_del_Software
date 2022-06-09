@@ -12,10 +12,13 @@ public class EntityIstruttore
     private String eMail;
     private String telefono;
 
-    public EntityIstruttore()
-    {}
-
-    public EntityIstruttore(String nome, String cognome, String oraLibera, Date giornoLiberao, String eMail, String telefono)
+    public EntityIstruttore(
+            String nome,
+            String cognome,
+            String oraLibera,
+            Date   giornoLiberao,
+            String eMail,
+            String telefono)
     {
         //TODO
     }

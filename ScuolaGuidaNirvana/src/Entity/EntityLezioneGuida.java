@@ -11,11 +11,8 @@ public class EntityLezioneGuida
     private String    ora;
     private final int durata = 2;
     private String    tipoPatente;
-    private String    oraPrenotazione;
+    private String    oraPrenotazione; //prenotazione è quando il cliente ha effettivamente prenotato la lezione
     private Date      dataPrenotazione;
-
-    public EntityLezioneGuida()
-    {}
 
     public EntityLezioneGuida(Date data, String ora, String tipoPatente, String oraPrenotazione, Date dataPrenotazione)
     {
