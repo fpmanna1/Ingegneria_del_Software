@@ -4,13 +4,13 @@ import Entity.*;
 
 public class GestioneScuolaGuida
 {
-    private static GestioneScuolaGuida istance = null;
+    private static GestioneScuolaGuida instance = null;
 
-    public static GestioneScuolaGuida getIstance()
+    public static GestioneScuolaGuida getInstance()
     {
-        if(istance == null)
-            istance = new GestioneScuolaGuida();
-        return istance;
+        if(instance == null)
+            instance = new GestioneScuolaGuida();
+        return instance;
     }
 
 }
