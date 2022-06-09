@@ -1,5 +1,15 @@
 package Boundary;
 
+import Controller.GestioneScuolaGuida;
+import Entity.EntityIstruttore;
+
+import javax.management.OperationsException;
+import java.sql.Date;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Scanner;
+
 public class BoundaryCliente
 {
     public void prenotazioneLezione()
