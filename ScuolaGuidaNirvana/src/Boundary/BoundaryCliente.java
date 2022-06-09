@@ -8,7 +8,7 @@ public class BoundaryCliente
 
     }
 
-    public void avviaProva()
+    public void simulazioneProva()
     {
         //TODO
     }

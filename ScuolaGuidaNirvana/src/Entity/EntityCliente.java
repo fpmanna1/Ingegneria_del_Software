@@ -12,6 +12,9 @@ public class EntityCliente
     private String civico;
     private String cap;
     private String patenteDaConseguire;
+    private String username;
+    private String password;
+
 
     public EntityCliente(
             String  nome,
