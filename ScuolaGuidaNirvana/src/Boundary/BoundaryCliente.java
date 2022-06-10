@@ -2,12 +2,14 @@ package Boundary;
 
 import Controller.GestioneScuolaGuida;
 import Entity.EntityIstruttore;
+import Entity.EntityLezioneGuida;
 
 import javax.management.OperationsException;
 import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class BoundaryCliente
@@ -18,6 +20,7 @@ public class BoundaryCliente
         Date data = null;
         Time ora = null;
         String matIstruttore = null;
+        EntityLezioneGuida lezioneGuida = null;
 
         Scanner input = new Scanner(System.in);
         try{
@@ -37,11 +40,22 @@ public class BoundaryCliente
         String tmpMat = input.next();
 
         try{
-            controller.prenotaLezione(data, ora, matIstruttore);
+            lezioneGuida = controller.prenotaLezione(data, ora, matIstruttore);
         }
         catch(OperationsException e){
             System.out.println("Lezione non disponibile");
         }
+
+        System.out.println("Lezione disponibile.\n confermare ? (y\n)");
+        String conferma = input.nextLine();
+
+        if(!conferma.toLowerCase().equals("y")){
+            System.out.println("Prenotazione annullata");
+            return;
+        }
+
+        controller.creaLezione(lezioneGuida);
+
     }
 
 
