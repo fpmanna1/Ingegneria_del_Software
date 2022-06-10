@@ -5,16 +5,14 @@ import Database.LezioneGuidaDAO;
 import Entity.*;
 
 import javax.management.OperationsException;
-import javax.swing.*;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.sql.Time;
-import java.util.ArrayList;
+import java.sql.SQLException;
 
 public class GestioneScuolaGuida
 {
     private static GestioneScuolaGuida instance = null;
-
+    private GestioneScuolaGuida(){}
     public static GestioneScuolaGuida getInstance()
     {
         if(instance == null)
@@ -22,10 +20,10 @@ public class GestioneScuolaGuida
         return instance;
     }
 
-    public void prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
+    public EntityLezioneGuida prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
     {
-        EntityIstruttore istruttore;
-        EntityLezioneGuida lezioneGuida;
+        EntityIstruttore istruttore = null;
+        EntityLezioneGuida lezioneGuida = null;
         IstruttoreDAO istruttoreDAO = null;
         LezioneGuidaDAO lezioneGuidaDAO = null;
 
@@ -36,7 +34,7 @@ public class GestioneScuolaGuida
                 throw new OperationsException("Matricola istruttore non valida/non esistente");
 
             // controllo se è già presente la lezione nel db
-            lezioneGuida = lezioneGuidaDAO.readLezioneGuida(data, ora);
+            lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
             if(lezioneGuida != null)
                 throw new OperationsException("Lezione guida non prenotabile");
 
@@ -45,11 +43,17 @@ public class GestioneScuolaGuida
             throw new RuntimeException(e);
         }
 
+        return lezioneGuida;
     }
 
-    public boolean verificaDisponibilitaLezione(Date data, String ora, String matIstruttore)
+    public void creaLezione(EntityLezioneGuida lezioneGuida)
     {
-        return true;
-    }
+        LezioneGuidaDAO lezioneGuidaDAO = null;
 
+        try {
+            lezioneGuidaDAO.createLezione(lezioneGuida);
+        } catch (SQLException e) {
+            System.out.println("Errore prenotazione lezione");
+        }
+    }
 }

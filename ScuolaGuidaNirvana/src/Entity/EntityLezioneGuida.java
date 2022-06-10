@@ -1,14 +1,15 @@
 package Entity;
 
+import java.sql.Time;
 import java.time.Clock;
-import java.util.Date;
+import java.sql.Date;
 
 public class EntityLezioneGuida
 {
     //public Clock ora;
     //public final Duration durata = Duration.ofHours(2);
     private Date      data;
-    private String    ora;
+    private Time      ora;
     private final int durata = 2;
     private String    tipoPatente;
     private String    oraPrenotazione; //prenotazione è quando il cliente ha effettivamente prenotato la lezione
@@ -27,11 +28,11 @@ public class EntityLezioneGuida
         this.data = data;
     }
 
-    public String getOra() {
+    public Time getOra() {
         return ora;
     }
 
-    public void setOra(String ora) {
+    public void setOra(Time ora) {
         this.ora = ora;
     }
 

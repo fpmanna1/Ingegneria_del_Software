@@ -1,6 +1,5 @@
 package Database;
 
-import Entity.EntityCliente;
 import Entity.EntityIstruttore;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,9 +13,12 @@ public class IstruttoreDAO
     { //TODO: Exceptions
         EntityIstruttore istruttore = null;
         Connection connection = DBManager.getConnection();
+
+        // Preaparazione query
         String query = "SELECT * FROM ISTRUTTORE WHERE ID = ?;";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, matricola);
+        // Esegui query
         ResultSet result = statement.executeQuery();
 
         if(result.next())
