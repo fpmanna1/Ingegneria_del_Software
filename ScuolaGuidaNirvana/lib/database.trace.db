@@ -393,3 +393,465 @@ Caused by: java.lang.NullPointerException: Cannot invoke "String.length()" becau
 	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
 	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
 	... 7
+2022-06-10 18:10:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]Istruttori (Matricola, nome, cognome, e-mail, telefono)\000d\000a\000d\000aCREATE TABLE ISTRUTTORI(\000d\000aMATRICOLA CHAR(4) NOT NULL PRIMARY KEY,\000d\000aNOME VARCHAR(20),\000d\000aCOGNOME VARCHAR(20),\000d\000aEMAIL VARCHAR(30),\000d\000aTELEFONO VARCHAR(10)"; expected "INSERT"; SQL statement:
+Istruttori (Matricola, nome, cognome, e-mail, telefono)
+
+CREATE TABLE ISTRUTTORI(
+MATRICOLA CHAR(4) NOT NULL PRIMARY KEY,
+NOME VARCHAR(20),
+COGNOME VARCHAR(20),
+EMAIL VARCHAR(30),
+TELEFONO VARCHAR(10) [42001-212]
+2022-06-10 18:10:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*])"; SQL statement:
+) [42000-212]
+2022-06-10 18:10:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ISTRUTTORI(\000d\000aMATRICOLA CHAR(4) NOT NULL PRIMARY KEY,\000d\000aNOME VARCHAR(20),\000d\000aCOGNOME VARCHAR(20),\000d\000aEMAIL VARCHAR(30),\000d\000aTELEFONO VARCHAR(10)[*]"; expected "ARRAY, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, DEFAULT, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ISTRUTTORI(
+MATRICOLA CHAR(4) NOT NULL PRIMARY KEY,
+NOME VARCHAR(20),
+COGNOME VARCHAR(20),
+EMAIL VARCHAR(30),
+TELEFONO VARCHAR(10) [42001-212]
+2022-06-10 18:10:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*])"; SQL statement:
+) [42000-212]
+2022-06-10 18:10:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE ISTRUTTORI(\000d\000aMATRICOLA CHAR(4) NOT NULL PRIMARY KEY,\000d\000aNOME VARCHAR(20),\000d\000aCOGNOME VARCHAR(20),\000d\000aEMAIL VARCHAR(30),\000d\000aTELEFONO VARCHAR(10)[*]"; expected "ARRAY, INVISIBLE, VISIBLE, NOT, NULL, AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, DEFAULT, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE ISTRUTTORI(
+MATRICOLA CHAR(4) NOT NULL PRIMARY KEY,
+NOME VARCHAR(20),
+COGNOME VARCHAR(20),
+EMAIL VARCHAR(30),
+TELEFONO VARCHAR(10) [42001-212]
+2022-06-10 18:10:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*])"; SQL statement:
+) [42000-212]
+2022-06-10 18:27:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Attempt to define a second primary key; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL PRIMARY KEY,
+ORA CHAR(5) NOT NULL PRIMARY KEY,
+ISTRUTTORE CHAR(4) NOT NULL PRIMARY KEY,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)) [90017-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.ddl.CommandWithColumns.setPrimaryKey(CommandWithColumns.java:148)
+	at org.h2.command.ddl.CommandWithColumns.addConstraintCommand(CommandWithColumns.java:49)
+	at org.h2.command.Parser.readColumnConstraints(Parser.java:9381)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:9333)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:9266)
+	at org.h2.command.Parser.parseCreate(Parser.java:6745)
+	at org.h2.command.Parser.parsePrepared(Parser.java:763)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 18:31:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL PRIMARY KEY,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aFOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000a[*]CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA))"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL PRIMARY KEY,
+ISTRUTTORE CHAR(4) NOT NULL,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)) [42001-212]
+2022-06-10 18:32:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL ,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aFOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000a[*]CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA))"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL ,
+ISTRUTTORE CHAR(4) NOT NULL,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)) [42001-212]
+2022-06-10 18:32:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL ,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aFOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000a[*]CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA))"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL ,
+ISTRUTTORE CHAR(4) NOT NULL,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)) [42001-212]
+2022-06-10 18:32:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL ,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aFOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000a[*]CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA))"; expected "INDEX, ON, NOT, DEFERRABLE, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL ,
+ISTRUTTORE CHAR(4) NOT NULL,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)) [42001-212]
+2022-06-10 18:33:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL ,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA))"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL ,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)) [42001-212]
+2022-06-10 18:39:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL ,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL ,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA)
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:41:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),
+) [42001-212]
+2022-06-10 18:41:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),
+) [42001-212]
+2022-06-10 18:42:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),
+) [42001-212]
+2022-06-10 18:43:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),
+) [42001-212]
+2022-06-10 18:43:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA),
+) [42001-212]
+2022-06-10 18:45:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:45:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:46:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:46:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 18:46:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE DISPONIBILITA(\000d\000aGIORNO VARCHAR(9) NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCONSTRAINT [*]FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aCONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)\000d\000a)"; expected "identifier"; SQL statement:
+CREATE TABLE DISPONIBILITA(
+GIORNO VARCHAR(9) NOT NULL,
+ORA CHAR(5) NOT NULL,
+ISTRUTTORE CHAR(4) NOT NULL,
+CONSTRAINT FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+CONSTRAINT pk_disponibilita PRIMARY KEY(ISTRUTTORE, GIORNO, ORA)
+) [42001-212]
+2022-06-10 19:08:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE [*]LEZIONIGUIDA(\000d\000aIDLEZIONE INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\000d\000aDATA DATE NOT NULL,\000d\000aORA CHAR(5) NOT NULL,\000d\000aDURATA  INT,\000d\000aTIPOPATENTE VARCHAR(4),\000d\000aISTRUTTORE CHAR(4) NOT NULL,\000d\000aCLIENTE CHAR(9) NOT NULL,\000d\000aFOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),\000d\000aFOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID)\000d\000a)"; expected "OR, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL, GLOBAL, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE LEZIONIGUIDA(
+IDLEZIONE INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+DATA DATE NOT NULL,
+ORA CHAR(5) NOT NULL,
+DURATA  INT,
+TIPOPATENTE VARCHAR(4),
+ISTRUTTORE CHAR(4) NOT NULL,
+CLIENTE CHAR(9) NOT NULL,
+FOREIGN KEY (ISTRUTTORE) REFERENCES ISTRUTTORI(MATRICOLA),
+FOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID)
+) [42001-212]
+2022-06-10 19:18:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "TIPOPATENTE" not found; SQL statement:
+CREATE TABLE ISCRIZIONI(
+CLIENTE CHAR(9) NOT NULL,
+CORSO VARCHAR(4) NOT NULL,
+DATAISCRIZIONE DATE,
+DATACONSEGUIMENTO DATE DEFAULT NULL,
+CONSTRAINT pk_iscrizioni PRIMARY KEY (CLIENTE, CORSO),
+FOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID),
+FOREIGN KEY (CORSO) REFERENCES TIPOPATENTE(CORSO)
+) [42102-212]
+2022-06-10 19:18:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CORSO" not found; SQL statement:
+CREATE TABLE ISCRIZIONI(
+CLIENTE CHAR(9) NOT NULL,
+CORSO VARCHAR(4) NOT NULL,
+DATAISCRIZIONE DATE,
+DATACONSEGUIMENTO DATE DEFAULT NULL,
+CONSTRAINT pk_iscrizioni PRIMARY KEY (CLIENTE, CORSO),
+FOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID),
+FOREIGN KEY (CORSO) REFERENCES CORSO(TIPOPATENTE)
+) [42102-212]
+2022-06-10 19:32:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "V" not found; SQL statement:
+CREATE TABLE DOMANDE(
+IDDOMANDA INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+FIGURA VARCHAR(40) DEFAULT NULL,
+TEMA VARCHAR(20) NOT NULL,
+FORMULAZIONE VARCHAR(100) NOT NULL,
+RISPOSTACORRETTA CHAR(1) NOT NULL CHECK(RISPOSTACORRETTA=V OR RISPOSTACORRETTA=F)
+) [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:136)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:191)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:72)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:131)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 19:32:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "V" not found; SQL statement:
+CREATE TABLE DOMANDE(
+IDDOMANDA INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+FIGURA VARCHAR(40) DEFAULT NULL,
+TEMA VARCHAR(20) NOT NULL,
+FORMULAZIONE VARCHAR(100) NOT NULL,
+RISPOSTACORRETTA CHAR(1) NOT NULL CHECK(RISPOSTACORRETTA="V" OR RISPOSTACORRETTA="F")
+) [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:140)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:136)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:191)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:72)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:131)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 19:36:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CORSI" because "CONSTRAINT_5E77" depends on it; SQL statement:
+DROP TABLE CORSI [90107-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 19:36:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE CORSI(\000d\000aTIPOPATENTE VARCHAR(4) NOT NULL PRIMARY KEY,\000d\000aCONSTRAINT check_patente CHECK(TIPOPATENTE IN(""A1"", ""A2"", ""AM"", 'A', 'B')\000d\000a)[*]"; expected "., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE CORSI(
+TIPOPATENTE VARCHAR(4) NOT NULL PRIMARY KEY,
+CONSTRAINT check_patente CHECK(TIPOPATENTE IN("A1", "A2", "AM", 'A', 'B')
+) [42001-212]
+2022-06-10 19:37:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE CORSI(\000d\000aTIPOPATENTE VARCHAR(4) NOT NULL PRIMARY KEY,\000d\000aCONSTRAINT check_patente CHECK(TIPOPATENTE IN('A1', 'A2', 'AM', 'A', 'B')\000d\000a)[*]"; expected "., [, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, NOCHECK, CHECK, ,, )"; SQL statement:
+CREATE TABLE CORSI(
+TIPOPATENTE VARCHAR(4) NOT NULL PRIMARY KEY,
+CONSTRAINT check_patente CHECK(TIPOPATENTE IN('A1', 'A2', 'AM', 'A', 'B')
+) [42001-212]
+2022-06-10 19:37:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CORSI" already exists; SQL statement:
+CREATE TABLE CORSI(
+TIPOPATENTE VARCHAR(2) NOT NULL PRIMARY KEY,
+CONSTRAINT check_patente CHECK(TIPOPATENTE IN('A1', 'A2', 'AM', 'A', 'B'))
+) [42101-212]
+2022-06-10 19:37:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CORSI" already exists; SQL statement:
+CREATE TABLE CORSI(
+TIPOPATENTE VARCHAR(4) NOT NULL PRIMARY KEY,
+CONSTRAINT check_patente CHECK(TIPOPATENTE IN('A1', 'A2', 'AM', 'A', 'B'))
+) [42101-212]
+2022-06-10 19:42:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE PROVE(\000d\000aIDPROVA INT NOT NULL AUTO_INCREMENT PRIMARY KEY,\000d\000aCLIENTE CHAR(9) NOT NULL,\000d\000aDATA DATE NOT NULL,\000d\000aESITO CHAR(1) NOT NULL,\000d\000aCONSTRAINT check_esito CHECK(ESITO IN('p', 'P', 'n', 'N'),\000d\000a[*]FOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID)\000d\000a)"; expected "INTERSECTS, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+CREATE TABLE PROVE(
+IDPROVA INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+CLIENTE CHAR(9) NOT NULL,
+DATA DATE NOT NULL,
+ESITO CHAR(1) NOT NULL,
+CONSTRAINT check_esito CHECK(ESITO IN('p', 'P', 'n', 'N'),
+FOREIGN KEY (CLIENTE) REFERENCES CLIENTI(CARTAID)
+) [42001-212]
+2022-06-10 19:53:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "FORMULAZIONE CHARACTER VARYING(100)": "U&'Ai passaggi a livello occorre usare la massima prudenza e moderare la velocit... (166)"; SQL statement:
+INSERT INTO DOMANDE VALUES(1, NULL, 'Limiti di velocità', 'Ai passaggi a livello occorre usare la massima prudenza e moderare la velocità, per evitare situazioni di pericolo che comportino il danneggiamento delle attrezzature', 'v') [22001-212]
+2022-06-10 19:53:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "DOMANDE" because "CONSTRAINT_7C" depends on it; SQL statement:
+DROP TABLE DOMANDE [90107-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 19:53:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "PROVE" because "CONSTRAINT_7" depends on it; SQL statement:
+DROP TABLE PROVE [90107-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-10 20:03:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E' obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f[*]')"; SQL statement:
+INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E' obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f') [42000-212]
