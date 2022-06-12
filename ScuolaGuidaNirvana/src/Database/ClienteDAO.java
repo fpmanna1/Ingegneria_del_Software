@@ -80,30 +80,30 @@ public class ClienteDAO
             connection = DBManager.getConnection();
             try{
                 Random random = new Random();
-               String query = "INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP, USERNAME, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
-               PreparedStatement statement = connection.prepareStatement(query);
-               statement.setString(1,  cliente.getNumeroCarta());
-               statement.setString(2,  cliente.getNome());
-               statement.setString(3,  cliente.getCognome());
-               statement.setDate(4,    cliente.getDataNascita());
-               statement.setString(5,  cliente.getEMail());
-               statement.setString(6,  cliente.getVia());
-               statement.setString(7,  cliente.getCivico());
-               statement.setString(8,  cliente.getCap());
-               statement.setString(9, cliente.getNome() + cliente.getDataNascita().toLocalDate().getYear());
-               statement.setString(10, cliente.getCognome() + random.nextInt(100, 1000));
-               //statement.setString(9, cliente.getPatenteDaConseguire());
+                String query = "INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP, USERNAME, PASSWORD) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1,  cliente.getNumeroCarta());
+                statement.setString(2,  cliente.getNome());
+                statement.setString(3,  cliente.getCognome());
+                statement.setDate(4,    cliente.getDataNascita());
+                statement.setString(5,  cliente.getEMail());
+                statement.setString(6,  cliente.getVia());
+                statement.setString(7,  cliente.getCivico());
+                statement.setString(8,  cliente.getCap());
+                statement.setString(9, cliente.getNome() + cliente.getDataNascita().toLocalDate().getYear());
+                statement.setString(10, cliente.getCognome() + random.nextInt(100, 1000));
+                //statement.setString(9, cliente.getPatenteDaConseguire());
 
-               statement.executeUpdate();
+                statement.executeUpdate();
 
-               query = "INSERT INTO PATENTIINPOSSESSO VALUES (?, ?, ?)";
-               statement = connection.prepareStatement(query);
+                query = "INSERT INTO PATENTIINPOSSESSO VALUES (?, ?, ?)";
+                statement = connection.prepareStatement(query);
 
-               statement.setString(1, tipoPatente.equals("nessuna") ? "None" : tipoPatente);
-               statement.setString(2, cliente.getNumeroCarta());
-               statement.setDate(3, dataConseguimento);
+                statement.setString(1, tipoPatente.equals("nessuna") ? "None" : tipoPatente);
+                statement.setString(2, cliente.getNumeroCarta());
+                statement.setDate(3, dataConseguimento);
 
-               statement.executeUpdate();
+                statement.executeUpdate();
             }
             catch(SQLException e){
                 System.out.println(e.toString());
@@ -118,6 +118,10 @@ public class ClienteDAO
         }
     }
 
+
+    /*
+     * Debug tests only
+     */
     public void selectClienti() throws OperationsException
     {
         Connection connection;
@@ -137,4 +141,6 @@ public class ClienteDAO
             System.out.println("Errore connesione database" + e.toString());
         }
     }
+
+
 }

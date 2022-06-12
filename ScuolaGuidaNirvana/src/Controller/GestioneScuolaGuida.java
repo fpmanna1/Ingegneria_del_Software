@@ -9,6 +9,7 @@ import javax.management.OperationsException;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.SQLException;
+import java.util.concurrent.TimeUnit;
 
 public class GestioneScuolaGuida
 {
@@ -72,6 +73,25 @@ public class GestioneScuolaGuida
         }
     }
 
+    public boolean inviaCredenziali(String eMailDestinatario)
+    {
+        final String template = "La registrazione del cliente ";
+        System.out.println("Invio email a " + eMailDestinatario + "...");
+
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            System.out.println(template + "non è andata a buon fine");
+            return false;
+        }
+        System.out.println(template + "è andata a buon fine");
+        return true;
+    }
+
+
+    /*
+    * Debug tests only
+    */
     public void selectClienti()
     {
         try {

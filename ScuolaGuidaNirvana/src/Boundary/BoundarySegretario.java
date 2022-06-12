@@ -77,6 +77,13 @@ public class BoundarySegretario
             // TODO
 
         controller.memorizzaCliente(cliente, patenteInPossesso, conseguimento);
+
+        boolean inviate = controller.inviaCredenziali(cliente.getEMail());
+        System.out.println("Le credenziali del cliente"
+                            + cliente.getNome() + " "
+                            + cliente.getCognome() + ""
+                            + (inviate ? "inviate con successo" : "non sono state inviate"));
+
     }
 
     public void inserisciIstruttore()
