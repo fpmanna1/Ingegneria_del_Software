@@ -1,0 +1,91 @@
+Index: ScuolaGuidaNirvana/src/Controller/GestioneScuolaGuida.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ScuolaGuidaNirvana/src/Controller/GestioneScuolaGuida.java b/ScuolaGuidaNirvana/src/Controller/GestioneScuolaGuida.java
+--- a/ScuolaGuidaNirvana/src/Controller/GestioneScuolaGuida.java	
++++ b/ScuolaGuidaNirvana/src/Controller/GestioneScuolaGuida.java	(date 1654886848266)
+@@ -1,6 +1,5 @@
+ package Controller;
+ 
+-import Database.ClienteDAO;
+ import Database.IstruttoreDAO;
+ import Database.LezioneGuidaDAO;
+ import Entity.*;
+@@ -12,61 +11,45 @@
+ import java.sql.Time;
+ import java.util.ArrayList;
+ 
+-public class GestioneScuolaGuida {
++public class GestioneScuolaGuida
++{
+     private static GestioneScuolaGuida instance = null;
+ 
+-    public static GestioneScuolaGuida getInstance() {
+-        if (instance == null)
++    public static GestioneScuolaGuida getInstance()
++    {
++        if(instance == null)
+             instance = new GestioneScuolaGuida();
+         return instance;
+     }
+ 
+-    public void prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException {
++    public void prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
++    {
+         EntityIstruttore istruttore;
+         EntityLezioneGuida lezioneGuida;
+         IstruttoreDAO istruttoreDAO = null;
+         LezioneGuidaDAO lezioneGuidaDAO = null;
+ 
+-        try {
++        try{
+             // controllo se la matricola dell'istruttore inserita dall'utente esiste nel db
+             istruttore = istruttoreDAO.readIstruttore(matIstruttore);
+-            if (istruttore == null)
++            if(istruttore == null)
+                 throw new OperationsException("Matricola istruttore non valida/non esistente");
+ 
+             // controllo se è già presente la lezione nel db
+             lezioneGuida = lezioneGuidaDAO.readLezioneGuida(data, ora);
+-            if (lezioneGuida != null)
++            if(lezioneGuida != null)
+                 throw new OperationsException("Lezione guida non prenotabile");
+ 
+-        } catch (SQLException e) {
++        }
++        catch (SQLException e){
+             throw new RuntimeException(e);
+         }
+ 
+     }
+ 
+-    public boolean verificaDisponibilitaLezione(Date data, String ora, String matIstruttore) {
++    public boolean verificaDisponibilitaLezione(Date data, String ora, String matIstruttore)
++    {
+         return true;
+     }
+ 
+-    public void registraCliente(String nome, String cognome, Date data_nascita, String via, String numero_civico, String CAP, String CartaID, String patente_da_conseguire, String patente_in_possesso, String email) throws OperationsException {
+-
+-        EntityCliente cliente;
+-        ClienteDAO clienteDAO = null;
+-
+-
+-        try {
+-            // controllo se il numero della carta d'identità inserito corrisponda ad un cliente registrato dal segretario  nel db
+-            cliente = clienteDAO.readCliente(CartaID);
+-            if (cliente == null)
+-                throw new OperationsException("Numero carta d'identità  non corrispondente a un cliente registrato nel sistema");
+-
+-
+-        } catch (SQLException e) {
+-            throw new RuntimeException(e);
+-        }
+-
+-    }
+ }
+-
+-
+-
