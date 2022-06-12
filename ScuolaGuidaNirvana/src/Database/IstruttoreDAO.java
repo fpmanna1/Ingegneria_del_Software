@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 public class IstruttoreDAO
 {
-    public EntityIstruttore readIstruttore(String matricola) //throws OperationsException
+    public EntityIstruttore readIstruttore(String matricola) throws OperationsException
     { //TODO: Exceptions
         EntityIstruttore istruttore = null;
         Connection connection = null;
@@ -34,7 +34,7 @@ public class IstruttoreDAO
             }
             catch(SQLException e){
                 System.out.println("Istruttore non trovato");
-                //throw new OperationsException();
+                throw new OperationsException();
             }
             finally{
                 connection.close();

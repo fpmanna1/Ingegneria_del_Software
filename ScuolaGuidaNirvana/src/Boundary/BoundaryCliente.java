@@ -34,7 +34,8 @@ public class BoundaryCliente
         try{
             System.out.println("Inserisci data lezione (AAAA-MM-GG)");
             String tmpData = input.nextLine();
-            data = Date.valueOf(tmpData);
+            data = Date.valueOf(tmpData)
+            ;
 
             System.out.println("Inserisci ora lezione (HH:mm)");
             String tmpOrario = input.nextLine();
@@ -45,7 +46,7 @@ public class BoundaryCliente
         }
 
         System.out.println("Inserisci matrica istruttore (Axxx)/(Bxxx)/(Cxxx)");
-        String tmpMat = input.next();
+        matIstruttore = input.next();
 
         try{
             lezioneGuida = controller.prenotaLezione(data, ora, matIstruttore);

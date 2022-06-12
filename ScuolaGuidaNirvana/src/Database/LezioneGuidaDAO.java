@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 
 public class LezioneGuidaDAO
 {
-    public EntityLezioneGuida verificaDisponibilitaLezione(Date data, Time ora, String matIstruttore)
+    public EntityLezioneGuida verificaDisponibilitaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
     {   //TODO: Exceptions
         /*
             TODO: Controllo input cliente (data e ora) se coincidono con giornoLibera e oraLibera rispettivamente
@@ -39,6 +39,7 @@ public class LezioneGuidaDAO
             }
             catch(SQLException e){
                 System.out.println("Lezione guida non esistente");
+                throw new OperationsException();
             }
             finally{
                 connection.close();

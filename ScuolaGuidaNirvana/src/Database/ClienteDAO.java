@@ -2,6 +2,7 @@ package Database;
 
 import java.sql.*;
 import java.util.Random;
+import java.util.random.RandomGenerator;
 
 import Entity.EntityCliente;
 
@@ -91,7 +92,7 @@ public class ClienteDAO
                 statement.setString(7,  cliente.getCivico());
                 statement.setString(8,  cliente.getCap());
                 statement.setString(9, cliente.getNome() + cliente.getDataNascita().toLocalDate().getYear());
-                statement.setString(10, cliente.getCognome() + random.nextInt(100, 1000));
+                statement.setString(10, generaCredenziali(cliente.getCognome()));
                 //statement.setString(9, cliente.getPatenteDaConseguire());
 
                 statement.executeUpdate();
@@ -118,6 +119,9 @@ public class ClienteDAO
         }
     }
 
+    private String generaCredenziali(String base){
+        return base + new Random().nextInt(100, 1000);
+    }
 
     /*
      * Debug tests only

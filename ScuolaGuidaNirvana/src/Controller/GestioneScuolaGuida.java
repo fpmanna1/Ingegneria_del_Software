@@ -30,15 +30,20 @@ public class GestioneScuolaGuida
         LezioneGuidaDAO lezioneGuidaDAO = new LezioneGuidaDAO();
 
         // controllo se la matricola dell'istruttore inserita dall'utente esiste nel db
-        istruttore = istruttoreDAO.readIstruttore(matIstruttore);
-        if(istruttore == null)
-            throw new OperationsException("Matricola istruttore non valida/non esistente");
+        try {
+            istruttore = istruttoreDAO.readIstruttore(matIstruttore);
+        }
+        catch(OperationsException e){
+            System.out.println("Matricola istruttore non valida/esistente");
+        }
 
         // controllo se è già presente la lezione nel db
-        lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
-        if(lezioneGuida != null)
-            throw new OperationsException("Lezione guida non prenotabile");
-
+        try {
+            lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
+        }
+        catch(OperationsException e){
+            System.out.println("Lezione guida non prenotabile");
+        }
 
         return lezioneGuida;
     }
