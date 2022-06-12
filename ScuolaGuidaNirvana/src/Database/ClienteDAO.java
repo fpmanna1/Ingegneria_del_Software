@@ -10,7 +10,7 @@ import javax.management.OperationsException;
 
 public class ClienteDAO
 {
-    public EntityCliente readCliente(String eMail)//TODO: exception
+   /* public EntityCliente readCliente(String eMail)//TODO: exception
     {
         EntityCliente cliente = null;
 
@@ -26,6 +26,33 @@ public class ClienteDAO
                     cliente = new EntityCliente(
                             result.getString(1), result.getString(2),
                             result.getDate  (3), eMail,
+                            result.getString(5), result.getString(6),
+                            result.getString(7), result.getString(8));
+                }
+            }catch(SQLException e){
+                throw new RuntimeException(e); //TODO: create DAO exception class
+            }
+        }catch(SQLException e){
+            throw new RuntimeException(e); //TODO: create exception class
+        }
+        return cliente;
+    } */
+
+    public EntityCliente leggiCliente(String numeroCartaID) throws OperationsException //TODO: exception
+    {
+        EntityCliente cliente = null;
+        try{
+            Connection connection = DBManager.getConnection();
+            String query = "SELECT * FROM CLIENTI WHERE CARTAID = ?;";
+            try{
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1, numeroCartaID);
+                ResultSet result = statement.executeQuery();
+
+                if(result.next()) {
+                    cliente = new EntityCliente(
+                            result.getString(1), result.getString(2),
+                            result.getDate  (3), numeroCartaID,
                             result.getString(5), result.getString(6),
                             result.getString(7), result.getString(8));
                 }

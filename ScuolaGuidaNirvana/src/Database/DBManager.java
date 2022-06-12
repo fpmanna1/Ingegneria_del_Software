@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBManager
 {
-    private static final String URL = "jdbc:h2:~/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database";
+    private static final String URL = "jdbc:h2:~/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database";
     private static Connection connection = null;
 
     private DBManager(){}
