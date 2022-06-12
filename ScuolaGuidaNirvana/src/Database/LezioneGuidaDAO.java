@@ -1,25 +1,21 @@
 package Database;
 
-import Entity.EntityIstruttore;
+import Entity.EntityCliente;
 import Entity.EntityLezioneGuida;
 
 import javax.management.OperationsException;
 import java.sql.*;
-import java.text.SimpleDateFormat;
 
 public class LezioneGuidaDAO
 {
     public EntityLezioneGuida verificaDisponibilitaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
-    {   //TODO: Exceptions
-        /*
-            TODO: Controllo input cliente (data e ora) se coincidono con giornoLibera e oraLibera rispettivamente
-         */
+    {
         EntityLezioneGuida lezioneGuida = null;
         Connection connection = null;
 
-        try {
+        try{
             connection = DBManager.getConnection();
-            try {
+            try{
                 String query = "SELECT * FROM LEZIONIGUIDA WHERE DATA = ? AND ORA = ? AND ISTRUTTORE = ?;";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setDate(1, data);
@@ -28,7 +24,7 @@ public class LezioneGuidaDAO
 
                 ResultSet result = statement.executeQuery();
 
-                if (result.next())
+                if(result.next())
                     lezioneGuida = new EntityLezioneGuida(
                             result.getDate(1),
                             new Time(result.getTime(2).getTime()).toString(),
@@ -51,19 +47,28 @@ public class LezioneGuidaDAO
         return lezioneGuida;
     }
 
-    public void createLezione(EntityLezioneGuida lezioneGuida) throws OperationsException
+    public void createLezione(EntityLezioneGuida lezioneGuida, String matIstruttore) throws OperationsException
     {
         try{
             Connection connection = DBManager.getConnection();
-            String query = "INSERT INTO LEZIONIGUIDA VALUES (? ? ? ? ?);";
+            String query = "INSERT INTO LEZIONIGUIDA VALUES (null, ?, ?, ?, ?, ?, ?);";
 
-            try {
+            try{
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setDate(1,   lezioneGuida.getData());
                 statement.setTime(2,   lezioneGuida.getOra());
-                statement.setString(3, lezioneGuida.getTipoPatente());
-                statement.setString(4, lezioneGuida.getOraPrenotazione());
-                statement.setDate(5,   lezioneGuida.getDataPrenotazione());
+                statement.setInt(3, lezioneGuida.getDurata());
+                statement.setString(4, lezioneGuida.getTipoPatente());
+                statement.setString(5, matIstruttore);
+
+                EntityCliente cliente = null;
+                String query2 = "SELECT CARTAID FROM CLIENTI WHERE  = ?;";
+                PreparedStatement statement1 = connection.prepareStatement(query2);
+                statement1.setString(1, );
+
+
+                statement.setString(6, );
+
 
                 statement.executeUpdate();
             }

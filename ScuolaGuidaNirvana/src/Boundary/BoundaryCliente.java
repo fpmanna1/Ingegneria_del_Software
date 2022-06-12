@@ -22,6 +22,7 @@ public class BoundaryCliente
         EntityLezioneGuida lezioneGuida = null;
         Scanner input = new Scanner(System.in);
 
+        /*
         System.out.println(">Nome utente:");
         String username = input.nextLine();
 
@@ -29,13 +30,12 @@ public class BoundaryCliente
         String password = input.nextLine();
 
 
-        controller.autenticazione(username, password);
+        controller.autenticazione(username, password);*/
 
         try{
             System.out.println("Inserisci data lezione (AAAA-MM-GG)");
             String tmpData = input.nextLine();
-            data = Date.valueOf(tmpData)
-            ;
+            data = Date.valueOf(tmpData);
 
             System.out.println("Inserisci ora lezione (HH:mm)");
             String tmpOrario = input.nextLine();
@@ -48,21 +48,17 @@ public class BoundaryCliente
         System.out.println("Inserisci matrica istruttore (Axxx)/(Bxxx)/(Cxxx)");
         matIstruttore = input.next();
 
-        try{
-            lezioneGuida = controller.prenotaLezione(data, ora, matIstruttore);
-        }
-        catch(OperationsException e){
-            System.out.println("Lezione non disponibile");
-        }
+        lezioneGuida = controller.prenotaLezione(data, ora, matIstruttore);
 
         System.out.println("Lezione disponibile.\nconfermare ? (y\\n)");
         String conferma = input.nextLine();
 
-        if(!conferma.toLowerCase().equals("y")){
+        if(!conferma.equalsIgnoreCase("y")){
             System.out.println("Prenotazione annullata");
             return;
         }
-        controller.creaLezione(lezioneGuida);
+
+        controller.creaLezione(lezioneGuida, matIstruttore);
     }
     public void simulazioneProva()
     {
