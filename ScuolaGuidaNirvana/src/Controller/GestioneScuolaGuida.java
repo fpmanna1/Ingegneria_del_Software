@@ -1,14 +1,16 @@
 package Controller;
 
-import Database.ClienteDAO;
-import Database.IstruttoreDAO;
-import Database.LezioneGuidaDAO;
+import Database.*;
 import Entity.*;
 
 import javax.management.OperationsException;
+import javax.swing.text.html.parser.Entity;
 import java.sql.Date;
 import java.sql.Time;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class GestioneScuolaGuida
@@ -95,14 +97,50 @@ public class GestioneScuolaGuida
         return true;
     }
 
-    public void simulazioneProva(String numeroCartaCliente)
+    public EntityProva simulaProva(String numeroCartaIDCliente) throws OperationsException
     {
+        EntityProva prova = new EntityProva();
+        int numDomande = 0;
+        ArrayList<Integer> randomNumbers = new ArrayList<Integer>(40);
+        EntityDomanda domanda = new EntityDomanda();
+        EntityCliente cliente = new EntityCliente();
+        ClienteDAO clienteDAO = new ClienteDAO();
+        DomandaDAO domandaDAO = new DomandaDAO();
+        ProvaDAO provaDAO = new ProvaDAO();
 
+        try{
+            cliente = clienteDAO.leggiCliente(numeroCartaIDCliente);
+        }
+        catch(OperationsException e){
+            System.out.println("Numero carta identità inserito non valido/esistente");
+        }
+        // conto il numero di domande presenti nel db v
+        // generare 40 numeri casuali senza ripetizioni fino a num domande
+        // prelevo 40 domande
+        // le aggiungo alla prova
+
+        try{
+            numDomande = domandaDAO.countDomande();
+        }
+        catch(OperationsException e){
+            System.out.println(e.getMessage());
+        }
+
+        randomNumbers = randomQuestions(numDomande);
+
+        try{ // aggiunta domande casuali alla prova
+            for(int i=0; i<40; i++) {
+                domanda = domandaDAO.readDomanda(randomNumbers.get(i));
+                prova.getDomande().add(domanda);
+            }
+        }
+        catch(OperationsException e)
+        {
+            System.out.println("Non sono presenti domande nel db");
+        }
+        return prova;
     }
 
-    /*
-    * Debug tests only
-    */
     public void selectClienti()
     {
         try {
@@ -112,4 +150,31 @@ public class GestioneScuolaGuida
             System.out.println(e.toString());
         }
     }
+    private ArrayList<Integer> randomQuestions(int numDomande) {
+        return(genNumber(numDomande));
+    }
+    private ArrayList<Integer> genNumber(int numMax){
+        Random rng = new Random();
+        ArrayList<Integer> generated = new ArrayList<Integer>(40);
+        int x = 40;    //numbers to get
+        int y = numMax;    //max number
+        for (int i = 0; i < x; i++)
+        {
+            while(true)
+            {
+                Integer next = rng.nextInt(y) + 1;
+                if (!generated.contains(next))
+                {
+                    generated.add(next);
+                    break;
+                }
+            }
+        }
+        return generated;
+    }
 }
+
+
+
+
+
