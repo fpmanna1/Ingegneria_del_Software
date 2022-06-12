@@ -855,3 +855,514 @@ DROP TABLE PROVE [90107-212]
 2022-06-10 20:03:44 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E' obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f[*]')"; SQL statement:
 INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E' obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f') [42000-212]
+2022-06-12 00:38:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found; SQL statement:
+select * from cliente [42102-212]
+2022-06-11 23:46:12 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-06-11 23:46:18 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-06-11 23:53:28 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-06-12 01:56:29 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.selectClienti(ClienteDAO.java:114)
+	at Controller.GestioneScuolaGuida.selectClienti(GestioneScuolaGuida.java:78)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:29)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 01:57:03 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.selectClienti(ClienteDAO.java:114)
+	at Controller.GestioneScuolaGuida.selectClienti(GestioneScuolaGuida.java:78)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:29)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 01:57:29 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.selectClienti(ClienteDAO.java:114)
+	at Controller.GestioneScuolaGuida.selectClienti(GestioneScuolaGuida.java:78)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:29)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 02:03:40 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.selectClienti(ClienteDAO.java:114)
+	at Controller.GestioneScuolaGuida.selectClienti(GestioneScuolaGuida.java:78)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:29)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 02:04:50 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 02:04:58 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:808)
+	at org.h2.server.web.WebApp.login(WebApp.java:1033)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.WebThread.process(WebThread.java:153)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 02:14:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (? [*]? ? ? ? ? ? ? ? ?);"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO CLIENTI VALUES (? ? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 00:16:19 jdbc[3]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-06-12 00:27:26 jdbc[4]: exception
+java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
+	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1573)
+	at com.intellij.database.remote.jdbc.impl.RemoteConnectionImpl.setClientInfo(RemoteConnectionImpl.java:470)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:359)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:562)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:796)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:677)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:676)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+2022-06-12 02:47:59 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.memorizzaCliente(ClienteDAO.java:79)
+	at Controller.GestioneScuolaGuida.memorizzaCliente(GestioneScuolaGuida.java:68)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:79)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/claudio/GitHub/Java/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 16 more
+2022-06-12 02:49:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (? [*]? ? ? ? ? ? ? ? ?);"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO CLIENTI VALUES (? ? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 02:51:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (? [[*]*]? ? ? ? ? ? ? ? ?);"; expected "INTERSECTS, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO CLIENTI VALUES (? [*]? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 02:55:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (? [*]UNIQUE ? ? ? ? ? ? ? ? ?);"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO CLIENTI VALUES (? UNIQUE ? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 02:58:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP) VALUES (? [*]UNIQUE ? ? ? ? ? ? ? ? ?);"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP) VALUES (? UNIQUE ? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 03:04:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (UNIQUE [*]? ? ? ? ? ? ? ? ? ?);"; expected "("; SQL statement:
+INSERT INTO CLIENTI VALUES (UNIQUE ? ? ? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 03:08:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (? [*]? ? ? ? ? ? ?);"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO CLIENTI VALUES (? ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 03:10:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES (UNIQUE([*]?) ? ? ? ? ? ? ?);"; expected "WITH, (, SELECT, TABLE, VALUES"; SQL statement:
+INSERT INTO CLIENTI VALUES (UNIQUE(?) ? ? ? ? ? ? ?); [42001-212]
+2022-06-12 03:16:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, 55555, 'marcello55', '5marcelloPosix5[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, 55555, 'marcello55', '5marcelloPosix5'); [42000-212]
+2022-06-12 03:16:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, 55555, 'marcello55', 'marcelloPosix5[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, 55555, 'marcello55', 'marcelloPosix5'); [42000-212]
+2022-06-12 03:16:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, '55555', 'marcello55', 'marcelloPosix5[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', 5, '55555', 'marcello55', 'marcelloPosix5'); [42000-212]
+2022-06-12 03:17:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix5[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix5'); [42000-212]
+2022-06-12 03:17:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:18:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:18:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:18:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:18:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:18:52 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55'); [42000-212]
+2022-06-12 03:19:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555'); [42000-212]
+2022-06-12 03:19:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5'); [42000-212]
+2022-06-12 03:19:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria'); [42000-212]
+2022-06-12 03:19:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it'); [42000-212]
+2022-06-12 03:19:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02'); [42000-212]
+2022-06-12 03:19:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque'); [42000-212]
+2022-06-12 03:19:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello'); [42000-212]
+2022-06-12 03:19:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES([*]'MC5555555);"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555); [42000-212]
+2022-06-12 03:19:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555') [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-12 03:20:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix[*]');"; SQL statement:
+INSERT INTO CLIENTI VALUES('MC5555555, 'Marcello', 'Cinque', '1998-09-02', 'cinque@unina.it', 'Lago Patria', '5', '55555', 'marcello55', 'marcelloPosix'); [42000-212]
+2022-06-12 03:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO CLIENTI VALUES (?, ?, ?, ?, ?, ?, ?, ?); [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at Database.ClienteDAO.memorizzaCliente(ClienteDAO.java:82)
+	at Controller.GestioneScuolaGuida.memorizzaCliente(GestioneScuolaGuida.java:68)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:79)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+2022-06-12 03:25:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "DATANASCINA" not found; SQL statement:
+INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCINA, EMAIL, VIA, NUMEROCIVICO, CAP) VALUES (?, ?, ?, ?, ?, ?, ?, ?); [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:754)
+	at org.h2.command.Parser.parseColumn(Parser.java:1264)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1249)
+	at org.h2.command.Parser.parseInsert(Parser.java:1650)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at Database.ClienteDAO.memorizzaCliente(ClienteDAO.java:82)
+	at Controller.GestioneScuolaGuida.memorizzaCliente(GestioneScuolaGuida.java:68)
+	at Boundary.BoundarySegretario.registraCliente(BoundarySegretario.java:79)
+	at Boundary.MainMenu.main(MainMenu.java:26)
+2022-06-12 03:26:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "EMAIL CHARACTER VARYING(20)": "'kurt.cobain@nirvanamail.com' (27)"; SQL statement:
+INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP) VALUES (?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-12 03:28:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "EMAIL CHARACTER VARYING(20)": "'kurt.cobain@nirvana.com' (23)"; SQL statement:
+INSERT INTO CLIENTI (CARTAID, NOME, COGNOME, DATANASCITA, EMAIL, VIA, NUMEROCIVICO, CAP) VALUES (?, ?, ?, ?, ?, ?, ?, ?) [22001-212]
+2022-06-12 03:41:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TIPOPATENTE CHARACTER VARYING(4)": "'nessuna' (7)"; SQL statement:
+INSERT INTO PATENTIINPOSSESSO VALUES (?, ?, ?) [22001-212]
+2022-06-12 03:49:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found; SQL statement:
+delete from cliente where cartaid = 'AX5059049' [42102-212]
+2022-06-12 03:49:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found; SQL statement:
+delete from cliente where cartaid = 'AX5059049' [42102-212]
+2022-06-12 03:49:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found; SQL statement:
+delete from cliente where cartaid = 'AX5059049' [42102-212]
+2022-06-12 03:59:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from clienti [*]and patentiinpossesso"; SQL statement:
+select * from clienti and patentiinpossesso [42000-212]
+2022-06-12 03:59:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from clienti [*]and patentiinpossesso"; SQL statement:
+select * from clienti and patentiinpossesso [42000-212]

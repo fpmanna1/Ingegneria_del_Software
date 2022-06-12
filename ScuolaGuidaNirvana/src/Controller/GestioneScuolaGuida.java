@@ -1,5 +1,6 @@
 package Controller;
 
+import Database.ClienteDAO;
 import Database.IstruttoreDAO;
 import Database.LezioneGuidaDAO;
 import Entity.*;
@@ -24,36 +25,60 @@ public class GestioneScuolaGuida
     {
         EntityIstruttore istruttore = null;
         EntityLezioneGuida lezioneGuida = null;
-        IstruttoreDAO istruttoreDAO = null;
-        LezioneGuidaDAO lezioneGuidaDAO = null;
+        IstruttoreDAO istruttoreDAO = new IstruttoreDAO();
+        LezioneGuidaDAO lezioneGuidaDAO = new LezioneGuidaDAO();
 
-        try{
-            // controllo se la matricola dell'istruttore inserita dall'utente esiste nel db
-            istruttore = istruttoreDAO.readIstruttore(matIstruttore);
-            if(istruttore == null)
-                throw new OperationsException("Matricola istruttore non valida/non esistente");
+        // controllo se la matricola dell'istruttore inserita dall'utente esiste nel db
+        istruttore = istruttoreDAO.readIstruttore(matIstruttore);
+        if(istruttore == null)
+            throw new OperationsException("Matricola istruttore non valida/non esistente");
 
-            // controllo se è già presente la lezione nel db
-            lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
-            if(lezioneGuida != null)
-                throw new OperationsException("Lezione guida non prenotabile");
+        // controllo se è già presente la lezione nel db
+        lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
+        if(lezioneGuida != null)
+            throw new OperationsException("Lezione guida non prenotabile");
 
-        }
-        catch (SQLException e){
-            throw new RuntimeException(e);
-        }
 
         return lezioneGuida;
     }
 
     public void creaLezione(EntityLezioneGuida lezioneGuida)
     {
-        LezioneGuidaDAO lezioneGuidaDAO = null;
-
-        try {
-            lezioneGuidaDAO.createLezione(lezioneGuida);
-        } catch (SQLException e) {
+        try{
+            new LezioneGuidaDAO().createLezione(lezioneGuida);
+        }
+        catch(OperationsException e){
             System.out.println("Errore prenotazione lezione");
+        }
+    }
+
+    public void autenticazione(String username, String password)
+    {
+        try{
+            new ClienteDAO().autenticazione(username, password);
+        }
+        catch(OperationsException e){
+            System.out.println("Errore inserimento dati utente");
+        }
+    }
+
+    public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date conseguimento)
+    {
+        try{
+            new ClienteDAO().memorizzaCliente(cliente, tipoPatente, conseguimento);
+        }
+        catch(OperationsException e){
+            System.out.println("Errore inserimento cliente");
+        }
+    }
+
+    public void selectClienti()
+    {
+        try {
+            new ClienteDAO().selectClienti();
+        }
+        catch (OperationsException e){
+            System.out.println(e.toString());
         }
     }
 }

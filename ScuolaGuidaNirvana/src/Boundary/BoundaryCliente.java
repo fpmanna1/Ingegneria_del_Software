@@ -9,7 +9,6 @@ import java.sql.Date;
 import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class BoundaryCliente
@@ -21,8 +20,17 @@ public class BoundaryCliente
         Time ora = null;
         String matIstruttore = null;
         EntityLezioneGuida lezioneGuida = null;
-
         Scanner input = new Scanner(System.in);
+
+        System.out.println(">Nome utente:");
+        String username = input.nextLine();
+
+        System.out.println(">Password:");
+        String password = input.nextLine();
+
+
+        controller.autenticazione(username, password);
+
         try{
             System.out.println("Inserisci data lezione (AAAA-MM-GG)");
             String tmpData = input.nextLine();
@@ -46,19 +54,15 @@ public class BoundaryCliente
             System.out.println("Lezione non disponibile");
         }
 
-        System.out.println("Lezione disponibile.\n confermare ? (y\n)");
+        System.out.println("Lezione disponibile.\nconfermare ? (y\\n)");
         String conferma = input.nextLine();
 
         if(!conferma.toLowerCase().equals("y")){
             System.out.println("Prenotazione annullata");
             return;
         }
-
         controller.creaLezione(lezioneGuida);
-
     }
-
-
     public void simulazioneProva()
     {
         //TODO
