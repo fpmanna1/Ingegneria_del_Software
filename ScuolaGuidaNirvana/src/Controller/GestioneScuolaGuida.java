@@ -13,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 
 public class GestioneScuolaGuida
 {
+    //private final ClienteDAO cliente = new ClienteDAO();
+
     private static GestioneScuolaGuida instance = null;
     private GestioneScuolaGuida(){}
     public static GestioneScuolaGuida getInstance()
@@ -93,6 +95,10 @@ public class GestioneScuolaGuida
         return true;
     }
 
+    public void simulazioneProva(String numeroCartaCliente)
+    {
+
+    }
 
     /*
     * Debug tests only

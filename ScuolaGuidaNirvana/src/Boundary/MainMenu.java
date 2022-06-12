@@ -1,9 +1,12 @@
 package Boundary;
 
+import Controller.GestioneScuolaGuida;
+
 import java.util.Scanner;
 
 public class MainMenu
 {
+    GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
@@ -28,6 +31,8 @@ public class MainMenu
         else{
             BoundaryCliente cliente = new BoundaryCliente();
             //TODO
+
+            controller.autenticazione();
         }
 
     }

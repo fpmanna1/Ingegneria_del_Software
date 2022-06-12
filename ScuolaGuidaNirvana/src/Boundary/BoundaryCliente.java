@@ -67,5 +67,6 @@ public class BoundaryCliente
     public void simulazioneProva()
     {
         //TODO
+
     }
 }

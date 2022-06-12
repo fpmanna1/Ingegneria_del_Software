@@ -34,6 +34,7 @@ public class BoundarySegretario
 
         System.out.print(">Nome: ");
         cliente.setNome(input.nextLine());
+
         System.out.print(">Cognome: ");
         cliente.setCognome(input.nextLine());
         System.out.print(">Data nascita (aaaa-mm-gg): ");
@@ -51,7 +52,7 @@ public class BoundarySegretario
         System.out.print(">Patente in possesso (Nessuna se sprovvisto di patente): ");
         String patenteInPossesso = input.nextLine();
         Date conseguimento = new Date(1, 1, 1);
-        if(!patenteInPossesso.toLowerCase().equals("nessuna")){
+        if(!patenteInPossesso.equalsIgnoreCase("nessuna")){
             System.out.print(">Data conseguimento patente: ");
             conseguimento = Date.valueOf(input.nextLine());
         }
@@ -71,7 +72,7 @@ public class BoundarySegretario
         patenteDaConseguire = input.nextLine();*/
 
         //boolean datiValidi = controllaDatiInseriti(nome, cognome, dataNascita, numeroCarta, eMail, via, civico, cap, patenteInPossesso, patenteDaConseguire);
-        //boolean datiValidi = controllaDatiInseriti(cliente);
+        boolean datiValidi = controllaDatiInseriti(cliente);
 
        // if(!datiValidi);
             // TODO
@@ -108,6 +109,7 @@ public class BoundarySegretario
 
     private boolean controllaDatiInseriti(EntityCliente cliente)
     {
+
         return true;
     }
 
