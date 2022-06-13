@@ -1,27 +1,33 @@
 package Database;
 
+import Entity.EntityCliente;
 import Entity.EntityProva;
 
 import javax.management.OperationsException;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class ProvaDAO
 {
-    public void createProva(EntityProva prova) throws OperationsException
+    public void createProva(EntityProva prova, String cartaID) throws OperationsException
     {
-        try{
-            Connection connection = DBManager.getConnection();
-            String query = "INSERT INTO PROVE VALUES (null, ?, ?, ?);";
+        Connection connection = null;
+        ResultSet result = null;
 
+        long milliseconds = System.currentTimeMillis();
+        Date date = new Date(milliseconds);
+
+        try{
+            connection = DBManager.getConnection();
             try { // IDPROVA, CLIENTE, DATA, ESITO
+                String query = "INSERT INTO PROVE(CLIENTE, DATA, ESITO) VALUES (?, ?, ?);";
                 PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(1, "CA00000AA");
-                statement.setDate(2, (Date)prova.getData());
+                statement.setString(1, cartaID);
+                statement.setDate(2, date);
                 statement.setString(3, prova.getEsito());
+
                 statement.executeUpdate();
+                System.out.println("execute");
+
             }
             catch(SQLException e){
                 System.out.println("Inserimento lezione fallita");

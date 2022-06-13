@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class EntityProva
 {
-    public final static int NUM_DOMANDE = 6;
+    public final static int NUM_DOMANDE = 2;
     private Date    data;
     private String esito;
 

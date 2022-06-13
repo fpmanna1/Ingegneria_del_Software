@@ -150,6 +150,7 @@ public class GestioneScuolaGuida
 
     public void selectClienti()
     {
+
         try {
             new ClienteDAO().selectClienti();
         }
@@ -180,28 +181,38 @@ public class GestioneScuolaGuida
         return generated;
     }
 
-    public int calcolaPunteggio(ArrayList<String> listaRisposte, EntityProva prova, String esito)
+    public int calcolaPunteggio(ArrayList<String> listaRisposte, EntityProva prova)
     {
         ArrayList<Integer> listaDomande = new ArrayList<Integer>(EntityProva.NUM_DOMANDE);
         int numErrori = 0;
 
         for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
-        {
-            listaDomande.add(prova.getDomande().get(i).getIDDomanda());
-        }
+            listaDomande.add(prova.getDomande().get(i).getIDDomanda()); // a dx ho le domande a cui devo rispondere
 
         // confronto risposte
         for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
         {
-            if(!(listaRisposte.get(i).equalsIgnoreCase(prova.getDomande().get(i).getRispostaCorretta())))
+            if (!(listaRisposte.get(i).equalsIgnoreCase(prova.getDomande().get(i).getRispostaCorretta())))
                 numErrori++;
         }
 
         if(numErrori >= 5)
-            esito = "n";
-        else
-            esito = "p";
+            prova.setEsito("n");
+            else
+                prova.setEsito("p");
+
         return numErrori;
+    }
+
+    public void creaProva(EntityProva prova, String cartaID) throws OperationsException
+    {
+        ProvaDAO provaDAO = new ProvaDAO();
+        try{
+            provaDAO.createProva(prova, cartaID);
+        }
+        catch(OperationsException e){
+            System.out.println("Errore inserimento prova");
+        }
     }
 }
 

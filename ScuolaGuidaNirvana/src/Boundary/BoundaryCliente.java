@@ -73,7 +73,7 @@ public class BoundaryCliente
        // prova.setDomande() = new ArrayList<EntityDomanda>(EntityProva.NUM_DOMANDE);
         ArrayList<String>  listaRisposte = new ArrayList<String>(EntityProva.NUM_DOMANDE);
         int numErrori;
-        String esito = "";
+
 
         Scanner input = new Scanner(System.in);
 
@@ -104,14 +104,19 @@ public class BoundaryCliente
 
         // devo confrontare il vettore delle risposte con le risposte delle domande a cui ho risposto
 
-        numErrori = controller.calcolaPunteggio(listaRisposte, prova, esito);
-        System.out.println(numErrori);
+        numErrori = controller.calcolaPunteggio(listaRisposte, prova);
 
-        if(esito.equals("v"))
-            System.out.println("Prova superata con " + numErrori);
-        if(esito.equals("f"))
-            System.out.println("Prova non superata, hai commesso " + numErrori);
 
+        // memorizzare la prova nel db
+        try{
+            controller.creaProva(prova, cartaID);
+        }
+        catch(OperationsException e)
+        {
+            System.out.println("prova");
+        }
+
+        // COMPOSIZIONE
 
         }
     }
