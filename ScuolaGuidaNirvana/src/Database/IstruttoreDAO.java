@@ -20,7 +20,7 @@ public class IstruttoreDAO
             connection = DBManager.getConnection();
             try{
                 // Preaparazione query
-                String query = "SELECT * FROM ISTRUTTORI WHERE ID = ?;";
+                String query = "SELECT * FROM ISTRUTTORI WHERE MATRICOLA = ?;";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setString(1, matricola);
                 // Esegui query

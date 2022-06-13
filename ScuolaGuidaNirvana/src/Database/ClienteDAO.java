@@ -98,7 +98,6 @@ public class ClienteDAO
         catch(SQLException e){
             System.out.print("Errore connessione al database");
         }
-
     }
 
     public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date dataConseguimento) throws OperationsException

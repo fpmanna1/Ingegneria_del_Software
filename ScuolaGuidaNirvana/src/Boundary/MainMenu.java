@@ -2,16 +2,20 @@ package Boundary;
 
 import Controller.GestioneScuolaGuida;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Scanner;
 
 public class MainMenu
 {
-    GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
         String tipoUtente;
         boolean on = true;
+        GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
+        BoundarySegretario segretario = new BoundarySegretario();
+        BoundaryCliente cliente = new BoundaryCliente();
 
         do{
             System.out.print("1.Accesso Segretario\n2.Accesso Cliente\n> ");
@@ -25,15 +29,18 @@ public class MainMenu
         while(on);
 
         if(tipoUtente.equals("1")){
-            BoundarySegretario segretario = new BoundarySegretario();
             segretario.registraCliente();
         }
         else{
-            BoundaryCliente cliente = new BoundaryCliente();
-            //TODO
+            boolean datiValidi = false;
+            do{
+                System.out.print("Inserire username e password\n>");
+                String username = input.nextLine();
+                String password = input.nextLine();
+                datiValidi = controller.autenticazione(username, password);
+            }while(!datiValidi);
 
-            controller.autenticazione();
+            cliente.prenotazioneLezione();
         }
-
     }
 }

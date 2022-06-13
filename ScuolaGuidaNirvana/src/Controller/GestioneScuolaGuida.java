@@ -26,7 +26,7 @@ public class GestioneScuolaGuida
         return instance;
     }
 
-    public EntityLezioneGuida prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
+    public EntityLezioneGuida prenotaLezione(Date data, Time ora, String matIstruttore)
     {
         EntityIstruttore istruttore = null;
         EntityLezioneGuida lezioneGuida = null;
@@ -52,24 +52,26 @@ public class GestioneScuolaGuida
         return lezioneGuida;
     }
 
-    public void creaLezione(EntityLezioneGuida lezioneGuida)
+    public void creaLezione(EntityLezioneGuida lezioneGuida, String matIstruttore)
     {
         try{
-            new LezioneGuidaDAO().createLezione(lezioneGuida);
+            new LezioneGuidaDAO().createLezione(lezioneGuida, matIstruttore);
         }
         catch(OperationsException e){
             System.out.println("Errore prenotazione lezione");
         }
     }
 
-    public void autenticazione(String username, String password)
+    public boolean autenticazione(String username, String password)
     {
         try{
             new ClienteDAO().autenticazione(username, password);
         }
         catch(OperationsException e){
             System.out.println("Errore inserimento dati utente");
+            return false;
         }
+        return true;
     }
 
     public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date conseguimento)
