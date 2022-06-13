@@ -40,32 +40,46 @@ public class ClienteDAO
 
     public EntityCliente leggiCliente(String numeroCartaID) throws OperationsException //TODO: exception
     {
+        Connection connection = null;
+        ResultSet result = null;
         EntityCliente cliente = null;
         try{
-            Connection connection = DBManager.getConnection();
-            String query = "SELECT * FROM CLIENTI WHERE CARTAID = ?;";
+            connection = DBManager.getConnection();
             try{
+                String query = "SELECT * FROM CLIENTI WHERE CARTAID = ?;";
                 PreparedStatement statement = connection.prepareStatement(query);
                 statement.setString(1, numeroCartaID);
-                ResultSet result = statement.executeQuery();
+                result = statement.executeQuery();
 
                 if(result.next()) {
                     cliente = new EntityCliente(
                             result.getString(1), result.getString(2),
-                            result.getDate  (3), numeroCartaID,
+                            /*result.getDate  (3),*/new Date(0), result.getString(4),
                             result.getString(5), result.getString(6),
-                            result.getString(7), result.getString(8));
+                            result.getString(7), result.getString(8),
+                            result.getString(9));
+                    System.out.println("Query eseguita");
                 }
+
+
             }catch(SQLException e){
-                throw new RuntimeException(e); //TODO: create DAO exception class
+                System.out.println(result.getString(1));
+                System.out.println(cliente.getDataNascita());
+                System.out.println(result.getString(2));
+                System.out.println(result.getString(4));
+                throw new OperationsException(); //TODO: create DAO exception class
+            }
+            finally {
+                connection.close();
             }
         }catch(SQLException e){
+            System.out.println("Secondo catch");
             throw new RuntimeException(e); //TODO: create exception class
         }
         return cliente;
     }
 
-    public void autenticazione(String username, String password) throws OperationsException
+   /* public void autenticazione(String username, String password) throws OperationsException
     {
         Connection connection = null;
         EntityCliente cliente = null;
@@ -98,7 +112,7 @@ public class ClienteDAO
         catch(SQLException e){
             System.out.print("Errore connessione al database");
         }
-    }
+    } */
 
     public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date dataConseguimento) throws OperationsException
     {
