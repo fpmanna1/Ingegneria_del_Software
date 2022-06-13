@@ -62,7 +62,7 @@ public class GestioneScuolaGuida
         }
     }
 
-    public boolean autenticazione(String username, String password)
+    /*public boolean autenticazione(String username, String password)
     {
         try{
             new ClienteDAO().autenticazione(username, password);
@@ -73,7 +73,7 @@ public class GestioneScuolaGuida
         }
         return true;
     }
-
+*/
     public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date conseguimento)
     {
         try{
@@ -103,7 +103,7 @@ public class GestioneScuolaGuida
     {
         EntityProva prova = new EntityProva();
         int numDomande = 0;
-        ArrayList<Integer> randomNumbers = new ArrayList<Integer>(40);
+        ArrayList<Integer> randomNumbers = new ArrayList<Integer>(EntityProva.NUM_DOMANDE); // vettore idDomande
         EntityDomanda domanda = new EntityDomanda();
         EntityCliente cliente = new EntityCliente();
         ClienteDAO clienteDAO = new ClienteDAO();
@@ -112,9 +112,14 @@ public class GestioneScuolaGuida
 
         try{
             cliente = clienteDAO.leggiCliente(numeroCartaIDCliente);
+            if(cliente == null){
+                System.out.println("Cliente non trovato");
+                throw new OperationsException();
+            }
         }
         catch(OperationsException e){
             System.out.println("Numero carta identità inserito non valido/esistente");
+            throw new OperationsException();
         }
         // conto il numero di domande presenti nel db v
         // generare 40 numeri casuali senza ripetizioni fino a num domande
@@ -131,7 +136,7 @@ public class GestioneScuolaGuida
         randomNumbers = randomQuestions(numDomande);
 
         try{ // aggiunta domande casuali alla prova
-            for(int i=0; i<40; i++) {
+            for(int i=0; i<EntityProva.NUM_DOMANDE; i++) {
                 domanda = domandaDAO.readDomanda(randomNumbers.get(i));
                 prova.getDomande().add(domanda);
             }
@@ -157,8 +162,8 @@ public class GestioneScuolaGuida
     }
     private ArrayList<Integer> genNumber(int numMax){
         Random rng = new Random();
-        ArrayList<Integer> generated = new ArrayList<Integer>(40);
-        int x = 40;    //numbers to get
+        ArrayList<Integer> generated = new ArrayList<Integer>(EntityProva.NUM_DOMANDE);
+        int x = EntityProva.NUM_DOMANDE;    //numbers to get
         int y = numMax;    //max number
         for (int i = 0; i < x; i++)
         {
@@ -175,10 +180,28 @@ public class GestioneScuolaGuida
         return generated;
     }
 
-    public int calcolaPunteggio(ArrayList<String> listaRisposte)
+    public int calcolaPunteggio(ArrayList<String> listaRisposte, EntityProva prova, String esito)
     {
-        return 2;
+        ArrayList<Integer> listaDomande = new ArrayList<Integer>(EntityProva.NUM_DOMANDE);
+        int numErrori = 0;
 
+        for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
+        {
+            listaDomande.add(prova.getDomande().get(i).getIDDomanda());
+        }
+
+        // confronto risposte
+        for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
+        {
+            if(!(listaRisposte.get(i).equalsIgnoreCase(prova.getDomande().get(i).getRispostaCorretta())))
+                numErrori++;
+        }
+
+        if(numErrori >= 5)
+            esito = "n";
+        else
+            esito = "p";
+        return numErrori;
     }
 }
 

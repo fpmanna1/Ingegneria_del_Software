@@ -70,9 +70,10 @@ public class BoundaryCliente
 
         GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
         EntityProva prova = new EntityProva();
-       // prova.setDomande() = new ArrayList<EntityDomanda>(40);
-        ArrayList<String>  listaRisposte = new ArrayList<String>(40);
+       // prova.setDomande() = new ArrayList<EntityDomanda>(EntityProva.NUM_DOMANDE);
+        ArrayList<String>  listaRisposte = new ArrayList<String>(EntityProva.NUM_DOMANDE);
         int numErrori;
+        String esito = "";
 
         Scanner input = new Scanner(System.in);
 
@@ -87,9 +88,10 @@ public class BoundaryCliente
         }
         catch(OperationsException e){
             System.out.println("Non è possibile iniziare la simulazione, numero carta identità non valido");
+            return;
         }
         prova.getDomande().add(null);
-        for(int i=0; i<40; i++)
+        for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
         {
             System.out.println("Domanda numero " + (i+1));
             System.out.println(prova.getDomande().get(i).getFormulazione() + "\n[V o F]");
@@ -102,7 +104,13 @@ public class BoundaryCliente
 
         // devo confrontare il vettore delle risposte con le risposte delle domande a cui ho risposto
 
-        numErrori = controller.calcolaPunteggio(listaRisposte);
+        numErrori = controller.calcolaPunteggio(listaRisposte, prova, esito);
+        System.out.println(numErrori);
+
+        if(esito.equals("v"))
+            System.out.println("Prova superata con " + numErrori);
+        if(esito.equals("f"))
+            System.out.println("Prova non superata, hai commesso " + numErrori);
 
 
         }

@@ -18,8 +18,8 @@ public class ProvaDAO
 
             try { // IDPROVA, CLIENTE, DATA, ESITO
                 PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(1, prova.getCliente());
-                statement.setDate(2, prova.getData());
+                statement.setString(1, "CA00000AA");
+                statement.setDate(2, (Date)prova.getData());
                 statement.setString(3, prova.getEsito());
                 statement.executeUpdate();
             }

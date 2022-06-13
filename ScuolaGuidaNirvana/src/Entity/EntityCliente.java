@@ -22,6 +22,7 @@ public class EntityCliente
             String nome,
             String cognome,
             Date   dataNascita,
+            String numeroCarta,
             String eMail,
             String via,
             String civico,
@@ -31,6 +32,7 @@ public class EntityCliente
         this.nome = nome;
         this.cognome = cognome;
         this.dataNascita = dataNascita;
+        this.numeroCarta = numeroCarta;
         this.eMail = eMail;
         this.via = via;
         this.civico = civico;

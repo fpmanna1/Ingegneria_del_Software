@@ -2,27 +2,24 @@ package Entity;
 
 import java.util.ArrayList;
 import java.util.Date;
-import Entity.EntityDomanda;
-
-import javax.swing.text.html.parser.Entity;
 
 public class EntityProva
 {
+    public final static int NUM_DOMANDE = 6;
     private Date    data;
-    private boolean esito;
-    private ArrayList<String> domande = new ArrayList<String>(40);
+    private String esito;
 
-    private ArrayList<EntityDomanda> domande;
+    private ArrayList<EntityDomanda> domande = new ArrayList<EntityDomanda>(NUM_DOMANDE);
 
     public EntityProva(){
-        esito = false;
-        data = new java.sql.Date(1,1,1);
-        domande = new ArrayList<EntityDomanda>(40);
+        esito = "";
+        data = new java.sql.Date(0);
+        domande = new ArrayList<EntityDomanda>(NUM_DOMANDE);
     }
-    public EntityProva(Date data, boolean esito, ArrayList<EntityDomanda> domande) {
+    public EntityProva(Date data, String esito, ArrayList<EntityDomanda> domande) {
         this.data = data;
         this.esito = esito;
-        this.domande =  new ArrayList<EntityDomanda>(40);
+        this.domande =  new ArrayList<EntityDomanda>(NUM_DOMANDE);
     }
 
     public ArrayList<EntityDomanda> getDomande(){ return this.domande; }
@@ -35,11 +32,11 @@ public class EntityProva
         this.data = data;
     }
 
-    public boolean getEsito() {
+    public String getEsito() {
         return esito;
     }
 
-    public void setEsito(boolean esito) {
+    public void setEsito(String esito) {
         this.esito = esito;
     }
 

@@ -64,10 +64,10 @@ public class LezioneGuidaDAO
                 EntityCliente cliente = null;
                 String query2 = "SELECT CARTAID FROM CLIENTI WHERE  = ?;";
                 PreparedStatement statement1 = connection.prepareStatement(query2);
-                statement1.setString(1, );
+                /*statement1.setString(1, );
 
 
-                statement.setString(6, );
+                statement.setString(6, ); */
 
 
                 statement.executeUpdate();
