@@ -40,7 +40,6 @@ public class DomandaDAO
         catch (SQLException e){
             System.out.println("Errore connessione al database");
         }
-
         return domanda;
     }
 
@@ -70,5 +69,11 @@ public class DomandaDAO
         }
         return numDomande;
     }
+
+    public int esitoDomanda()
+    {
+        return 2;
+    }
+
 
 }

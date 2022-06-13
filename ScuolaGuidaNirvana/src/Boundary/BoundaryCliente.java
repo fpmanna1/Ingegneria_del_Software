@@ -75,6 +75,7 @@ public class BoundaryCliente
         EntityProva prova = new EntityProva();
        // prova.setDomande() = new ArrayList<EntityDomanda>(40);
         ArrayList<String>  listaRisposte = new ArrayList<String>(40);
+        int numErrori;
 
         Scanner input = new Scanner(System.in);
 
@@ -102,14 +103,11 @@ public class BoundaryCliente
             input.nextLine();
         }
 
-        // qui bisogna prelevare 40 domande e creare la entity prova, lo si fa direttamente nel metodo del controller
+        // devo confrontare il vettore delle risposte con le risposte delle domande a cui ho risposto
 
-        // metodo esecuzione della simulazione da parte dell'utente
-
-        // esecuzioneProva
+        numErrori = controller.calcolaPunteggio(listaRisposte);
 
 
-            // se è valido il numero di carta, avvia la prova, dopo che è stata generata, l'utente esegue la prova nella boundary
         }
     }
 

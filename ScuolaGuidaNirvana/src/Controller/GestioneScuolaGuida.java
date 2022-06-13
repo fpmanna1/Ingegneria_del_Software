@@ -172,6 +172,12 @@ public class GestioneScuolaGuida
         }
         return generated;
     }
+
+    public int calcolaPunteggio(ArrayList<String> listaRisposte)
+    {
+        return 2;
+
+    }
 }
 
 
