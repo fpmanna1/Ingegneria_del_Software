@@ -1,44 +1,64 @@
 package Boundary;
 
 import Controller.GestioneScuolaGuida;
+import Entity.EntityCliente;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.util.Scanner;
 
 public class MainMenu
 {
     public static void main(String[] args)
     {
-        GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
         Scanner input = new Scanner(System.in);
-        BoundaryCliente cliente = new BoundaryCliente();
-        String tipoUtente;
+        String selezione;
         boolean on = true;
+        GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
+        BoundarySegretario segretario = new BoundarySegretario();
+        BoundaryCliente cliente = new BoundaryCliente();
+        EntityCliente eCliente = new EntityCliente();
 
         do{
             System.out.print("1.Accesso Segretario\n2.Accesso Cliente\n> ");
-            tipoUtente = input.nextLine();
+            selezione = input.nextLine();
 
-            if(tipoUtente.equals("1") || tipoUtente.equals("2"))
+            if(selezione.equals("1") || selezione.equals("2"))
                 on = false;
             else
                 System.out.println("Errore riprovare");
         }
         while(on);
 
-        if(tipoUtente.equals("1")){
-            BoundarySegretario segretario = new BoundarySegretario();
+        if(selezione.equals("1")){
             segretario.registraCliente();
         }
-        else{ /*
-            boolean datiValidi = false;
+        else{
             do{
-                System.out.print("Inserire username e password\n>");
+                System.out.println("Inserire credenziali");
+                System.out.println("Username\n>");
                 String username = input.nextLine();
+                System.out.println("Password\n>");
                 String password = input.nextLine();
-                datiValidi = controller.autenticazione(username, password);
-            }while(!datiValidi); */
+                eCliente = controller.autenticazione(username, password);
+            }while(eCliente == null);
 
-            cliente.simulazioneProva();
+            on = true;
+            do{
+                System.out.println("1.Prenota lezione\n2.Simula prova");
+                System.out.println();
+                selezione = input.nextLine();
+
+                if(selezione.equals("1") || selezione.equals("2"))
+                    on = false;
+                else
+                    System.out.println("Errore riprovare");
+            }while(on);
+
+            if(selezione.equals("1"))
+                cliente.prenotazioneLezione();
+            else
+                cliente.simulazioneProva();
 
         }
     }

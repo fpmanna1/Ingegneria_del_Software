@@ -54,7 +54,7 @@ public class ClienteDAO
                 if(result.next()) {
                     cliente = new EntityCliente(
                             result.getString(1), result.getString(2),
-                            /*result.getDate  (3),*/new Date(0), result.getString(4),
+                            result.getString(3), result.getDate  (4),
                             result.getString(5), result.getString(6),
                             result.getString(7), result.getString(8),
                             result.getString(9));
@@ -79,40 +79,7 @@ public class ClienteDAO
         return cliente;
     }
 
-   /* public void autenticazione(String username, String password) throws OperationsException
-    {
-        Connection connection = null;
-        EntityCliente cliente = null;
 
-        try{
-            connection = DBManager.getConnection();
-            try {
-                String query = "SELECT * FROM CLIENTI WHERE USERNAME = ? AND PASSWORD = ?";
-                PreparedStatement statement = connection.prepareStatement(query);
-                statement.setString(1, username);
-                statement.setString(2, password);
-                ResultSet result = statement.executeQuery();
-
-                if(result.next())
-                    cliente = new EntityCliente(
-                            result.getString(1), result.getString(2),
-                            result.getDate(3),   result.getString(4),
-                            result.getString(5), result.getString(6),
-                            result.getString(7), result.getString(8)
-                    );
-            }
-            catch(SQLException e){
-                System.out.println("Utente non trovato");
-                throw new OperationsException();
-            }
-            finally {
-                connection.close();
-            }
-        }
-        catch(SQLException e){
-            System.out.print("Errore connessione al database");
-        }
-    } */
 
     public void memorizzaCliente(EntityCliente cliente, String tipoPatente, Date dataConseguimento) throws OperationsException
     {
@@ -190,6 +157,44 @@ public class ClienteDAO
         catch(SQLException e){
             System.out.println("Errore connesione database" + e.toString());
         }
+    }
+
+    public EntityCliente autenticazione(String username, String password) throws OperationsException
+    {
+        Connection connection = null;
+        EntityCliente cliente = null;
+        ResultSet result;
+        try{
+            connection = DBManager.getConnection();
+            try {
+                String query = "SELECT * FROM CLIENTI WHERE USERNAME = ? AND PASSWORD = ?;";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1, username);
+                statement.setString(2, password);
+                result = statement.executeQuery();
+
+                if(result.next()) {
+                    cliente = new EntityCliente(
+                            result.getString(1), result.getString(2),
+                            result.getString(4), result.getDate(4),
+                            result.getString(5), result.getString(6),
+                            result.getString(7), result.getString(8),
+                            result.getString(9)
+                    );
+                    System.out.println("result ok!");
+                }
+            }
+            catch(SQLException e){
+                throw new OperationsException("errore query");
+            }
+            finally{
+                connection.close();
+            }
+        }
+        catch(SQLException e){
+            System.out.print("Errore connessione al database");
+        }
+        return cliente;
     }
 
 

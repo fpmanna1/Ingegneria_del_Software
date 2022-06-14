@@ -91,63 +91,49 @@ public class BoundaryCliente
             return;
         }
         prova.getDomande().add(null);
+        boolean ok = true;
+        String temp;
         for(int i=0; i<EntityProva.NUM_DOMANDE; i++)
         {
-            System.out.println("Domanda numero " + (i+1));
-            System.out.println(prova.getDomande().get(i).getFormulazione() + "\n[V o F]");
-
-            listaRisposte.add((input.nextLine()));
-
-            System.out.println("\nPremere per continuare...");
-            input.nextLine();
+            do {
+                ok = true;
+                System.out.println("Domanda numero " + (i + 1));
+                System.out.println(prova.getDomande().get(i).getFormulazione() + "\n[V o F]");
+                temp = input.nextLine();
+                if(!(temp.equalsIgnoreCase("v") || temp.equalsIgnoreCase("f")))
+                {
+                    System.out.println("Devi inserire v o f!!");
+                    ok = false;
+                }
+                if(ok)
+                    listaRisposte.add(temp);
+                System.out.println("Premere per continuare...");
+                input.nextLine();
+            }while(!ok);
         }
+        System.out.println(listaRisposte);
 
         // devo confrontare il vettore delle risposte con le risposte delle domande a cui ho risposto
 
         numErrori = controller.calcolaPunteggio(listaRisposte, prova);
 
 
-        // memorizzare la prova nel db
+        // memorizzare la prova nel db con le rispettive domande in composizione
         try{
             controller.creaProva(prova, cartaID);
         }
         catch(OperationsException e)
         {
-            System.out.println("prova");
+            System.out.println("Prova non memorizzata nel db");
         }
 
-        // COMPOSIZIONE
+        // COMPOSIZIONE 2
+        // gestire caso v o f quando l'utente fa la prova  1 fatto
+
+        // inserire patenti in possesso in classe cliente (vedere eventuale contenimento)  4
+        // gestione eccezioni e implementazione classi eccezione  5
+
+        // vedere se chiedere cartà di identità all'inizio da simulazione prova  3
 
         }
     }
-
-
-
-
-
-/*
-    public EntityLezioneGuida prenotaLezione(Date data, Time ora, String matIstruttore) throws OperationsException
-    {
-        EntityIstruttore istruttore = null;
-        EntityLezioneGuida lezioneGuida = null;
-        IstruttoreDAO istruttoreDAO = new IstruttoreDAO();
-        LezioneGuidaDAO lezioneGuidaDAO = new LezioneGuidaDAO();
-
-        // controllo se la matricola dell'istruttore inserita dall'utente esiste nel db
-        try {
-            istruttore = istruttoreDAO.readIstruttore(matIstruttore);
-        }
-        catch(OperationsException e){
-            System.out.println("Matricola istruttore non valida/esistente");
-        }
-
-        // controllo se è già presente la lezione nel db
-        try {
-            lezioneGuida = lezioneGuidaDAO.verificaDisponibilitaLezione(data, ora, matIstruttore);
-        }
-        catch(OperationsException e){
-            System.out.println("Lezione guida non prenotabile");
-        }
-
-        return lezioneGuida;
-    } */

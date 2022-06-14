@@ -214,6 +214,20 @@ public class GestioneScuolaGuida
             System.out.println("Errore inserimento prova");
         }
     }
+
+    public EntityCliente autenticazione(String username, String password)
+    {
+        EntityCliente cliente = new EntityCliente();
+        ClienteDAO clienteDAO = new ClienteDAO();
+
+        try{
+            cliente = clienteDAO.autenticazione(username, password);
+        }
+        catch(OperationsException e){
+            System.out.println(e.getMessage());
+        }
+        return cliente;
+    }
 }
 
 

@@ -6,7 +6,7 @@ public class EntityCliente
 {
     private String nome;
     private String cognome;
-    private Date   dataNascita;
+    private java.sql.Date dataNascita;
     private String numeroCarta;
     private String eMail;
     private String via;
@@ -19,10 +19,10 @@ public class EntityCliente
     private String password;
 
     public EntityCliente(
+            String numeroCarta,
             String nome,
             String cognome,
             Date   dataNascita,
-            String numeroCarta,
             String eMail,
             String via,
             String civico,

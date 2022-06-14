@@ -1714,3 +1714,202 @@ INSERT INTO PROVE(CLIENTE, DATA, ESITO) VALUES (null, ?, ?, ?); [21002-212]
 	at Controller.GestioneScuolaGuida.creaProva(GestioneScuolaGuida.java:211)
 	at Boundary.BoundaryCliente.simulazioneProva(BoundaryCliente.java:112)
 	at Boundary.MainMenu.main(MainMenu.java:41)
+2022-06-14 16:16:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "SUPERPIPPO2" not found; SQL statement:
+update clienti set superpippo2 where CARTAID = 'CA00000AA' [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:754)
+	at org.h2.command.Parser.readTableColumn(Parser.java:1092)
+	at org.h2.command.Parser.readUpdateSetClause(Parser.java:1159)
+	at org.h2.command.Parser.parseUpdate(Parser.java:1128)
+	at org.h2.command.Parser.parsePrepared(Parser.java:858)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-14 17:20:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:23:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:25:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:28:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM CLIENTI WHERE USERNAME =[*]= ? AND PASSWORD == ?"; expected "ALL, ANY, SOME"; SQL statement:
+SELECT * FROM CLIENTI WHERE USERNAME == ? AND PASSWORD == ? [42001-212]
+2022-06-14 17:29:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from clienti where username =[*]= 'superpippo' and password == 'inzaghi'"; expected "ALL, ANY, SOME"; SQL statement:
+select * from clienti where username == 'superpippo' and password == 'inzaghi' [42001-212]
+2022-06-14 17:31:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:32:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:33:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:35:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:182)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:36:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:39:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "Pluto" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.ClienteDAO.autenticazione(ClienteDAO.java:179)
+	at Controller.GestioneScuolaGuida.autenticazione(GestioneScuolaGuida.java:224)
+	at Boundary.MainMenu.main(MainMenu.java:43)
+Caused by: java.lang.IllegalArgumentException: Pluto
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 6 more
+2022-06-14 17:40:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-212]
+2022-06-14 17:48:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "fpm@gmail.com" [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.util.LegacyDateTimeUtils.toDate(LegacyDateTimeUtils.java:162)
+	at org.h2.jdbc.JdbcResultSet.getDate(JdbcResultSet.java:391)
+	at Database.IstruttoreDAO.readIstruttore(IstruttoreDAO.java:32)
+	at Controller.GestioneScuolaGuida.prenotaLezione(GestioneScuolaGuida.java:38)
+	at Boundary.BoundaryCliente.prenotazioneLezione(BoundaryCliente.java:56)
+	at Boundary.MainMenu.main(MainMenu.java:59)
+Caused by: java.lang.NumberFormatException: For input string: "fpm@gmail"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 7 more
