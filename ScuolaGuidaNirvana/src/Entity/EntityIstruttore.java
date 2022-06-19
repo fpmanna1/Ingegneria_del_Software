@@ -5,22 +5,44 @@ import java.util.Date;
 
 public class EntityIstruttore
 {
+    private String matricola;
     private String nome;
     private String cognome;
-    private String oraLibera;
-    private Date   giornoLibero;
     private String eMail;
     private String telefono;
+    private String oraLibera;
+    private Date   giornoLibero;
 
+    public EntityIstruttore()
+    {
+        matricola = "";
+        nome = "";
+        cognome = "";
+        oraLibera = "";
+        giornoLibero = new Date(0);
+        eMail = "";
+        telefono = "";
+    }
     public EntityIstruttore(
+            String matricola,
             String nome,
             String cognome,
-            String oraLibera,
-            Date   giornoLiberao,
             String eMail,
             String telefono)
     {
-        //TODO
+        this.matricola = matricola;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.eMail = eMail;
+        this.telefono = telefono;
+    }
+
+    public String getMatricola(){
+        return matricola;
+    }
+
+    public void setMatricola(String matricola){
+        this.matricola = matricola;
     }
 
     public String getNome() {

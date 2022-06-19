@@ -1,44 +1,52 @@
 package Database;
 
-import Entity.EntityCliente;
 import Entity.EntityProva;
+import Exception.DBConnectionException;
 
 import javax.management.OperationsException;
 import java.sql.*;
 
 public class ProvaDAO
 {
-    public void createProva(EntityProva prova, String cartaID) throws OperationsException
+    public int memorizzaProva(EntityProva prova, String cartaID) throws OperationsException, DBConnectionException
     {
         Connection connection = null;
         ResultSet result = null;
-
-        long milliseconds = System.currentTimeMillis();
-        Date date = new Date(milliseconds);
+        int idProva = 0;
+        /*
+         * ottengo la data odierna
+         */
+        Date date = new Date(System.currentTimeMillis());
 
         try{
             connection = DBManager.getConnection();
-            try { // IDPROVA, CLIENTE, DATA, ESITO
+            try {
                 String query = "INSERT INTO PROVE(CLIENTE, DATA, ESITO) VALUES (?, ?, ?);";
                 PreparedStatement statement = connection.prepareStatement(query);
+
                 statement.setString(1, cartaID);
                 statement.setDate(2, date);
                 statement.setString(3, prova.getEsito());
-
                 statement.executeUpdate();
-                System.out.println("execute");
 
+                String query2 = "SELECT MAX(IDPROVA) FROM PROVE;";
+                PreparedStatement statement2 = connection.prepareStatement(query2);
+                result = statement2.executeQuery();
+                if(result.next()) {
+                    /* mette l'id della prova appena memorizzata nella variable idProva */
+                    idProva = result.getInt(1);
+                }
             }
             catch(SQLException e){
-                System.out.println("Inserimento lezione fallita");
-                throw new OperationsException();
+                throw new OperationsException("Errore inserimento prova");
             }
             finally {
                 DBManager.closeConnection();
             }
         }
         catch(SQLException e){
-            System.out.println("Errore connesione database");
+            throw new DBConnectionException("Errore connessione al db");
         }
+        return idProva;
     }
 }

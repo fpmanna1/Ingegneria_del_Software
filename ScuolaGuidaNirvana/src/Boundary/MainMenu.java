@@ -3,8 +3,6 @@ package Boundary;
 import Controller.GestioneScuolaGuida;
 import Entity.EntityCliente;
 
-import java.sql.Date;
-import java.sql.Time;
 import java.util.Scanner;
 
 public class MainMenu
@@ -13,12 +11,12 @@ public class MainMenu
     {
         Scanner input = new Scanner(System.in);
         String selezione;
-        boolean on = true;
         GestioneScuolaGuida controller = GestioneScuolaGuida.getInstance();
         BoundarySegretario segretario = new BoundarySegretario();
-        BoundaryCliente cliente = new BoundaryCliente();
+        BoundaryCliente bCliente = new BoundaryCliente();
         EntityCliente eCliente = new EntityCliente();
 
+        boolean on = true;
         do{
             System.out.print("1.Accesso Segretario\n2.Accesso Cliente\n> ");
             selezione = input.nextLine();
@@ -31,24 +29,26 @@ public class MainMenu
         while(on);
 
         if(selezione.equals("1")){
+            System.out.println("Registrazione cliente\n");
             segretario.registraCliente();
         }
         else{
             do{
                 System.out.println("Inserire credenziali");
-                System.out.println("Username\n>");
+                System.out.print(">Username: ");
                 String username = input.nextLine();
-                System.out.println("Password\n>");
+                System.out.print(">Password: ");
                 String password = input.nextLine();
-                eCliente = controller.autenticazione(username, password);
+                eCliente = controller.readCliente(username, password);
             }while(eCliente == null);
+
+            System.out.println("Benvenuto " + eCliente.getCognome() + " " + eCliente.getNome());
+            bCliente.setCliente(eCliente);
 
             on = true;
             do{
                 System.out.println("1.Prenota lezione\n2.Simula prova");
-                System.out.println();
                 selezione = input.nextLine();
-
                 if(selezione.equals("1") || selezione.equals("2"))
                     on = false;
                 else
@@ -56,10 +56,9 @@ public class MainMenu
             }while(on);
 
             if(selezione.equals("1"))
-                cliente.prenotazioneLezione();
+                bCliente.prenotazioneLezione();
             else
-                cliente.simulazioneProva();
-
+                bCliente.simulazioneProva();
         }
     }
 }

@@ -8,7 +8,7 @@ public class EntityDomanda
     private int IDDomanda;
     private String formulazione;
     private String rispostaCorretta;
-    private String   figura;
+    private String figura;
     private String tema;
 
     public EntityDomanda(

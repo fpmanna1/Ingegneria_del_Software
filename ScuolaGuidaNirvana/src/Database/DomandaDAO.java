@@ -7,10 +7,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Exception.DBConnectionException;
 
 public class DomandaDAO
 {
-    public EntityDomanda readDomanda(int IDDomanda) throws OperationsException
+    /*
+     * legge una domanda con un certo idDomanda dalla tabella DOMANDE del db
+     */
+    public EntityDomanda prelevaDomanda(int idDomanda) throws OperationsException, DBConnectionException
     {
         EntityDomanda domanda = null;
         Connection connection = null;
@@ -20,7 +24,7 @@ public class DomandaDAO
             try { // iddomanda, figura, tema, formulazione, rispostacorretta
                 String query = "SELECT * FROM DOMANDE WHERE IDDOMANDA = ?;";
                 PreparedStatement statement = connection.prepareStatement(query);
-                statement.setInt(1, IDDomanda);
+                statement.setInt(1, idDomanda);
                 ResultSet result = statement.executeQuery();
 
                 if(result.next())
@@ -31,19 +35,19 @@ public class DomandaDAO
                     );
             }
             catch(SQLException e){
-                System.out.println("");
+                throw new OperationsException("Errore prelievo domanda");
             }
             finally{
-                connection.close();
+                DBManager.closeConnection();
             }
         }
         catch (SQLException e){
-            System.out.println("Errore connessione al database");
+            throw new OperationsException("Errore connessione al database");
         }
         return domanda;
     }
 
-    public int countDomande() throws OperationsException
+    public int countDomande() throws OperationsException, DBConnectionException
     {
         Connection connection = null;
         int numDomande = 0;
@@ -58,22 +62,15 @@ public class DomandaDAO
                     numDomande = result.getInt(1);
             }
             catch(SQLException e){
-                throw new OperationsException("Non sono presenti domande nel db");
+                throw new OperationsException("Errore count domande");
             }
             finally{
-                connection.close();
+                DBManager.closeConnection();
             }
         }
         catch (SQLException e){
-            System.out.println("Errore connessione al database");
+            throw new DBConnectionException("Errore connessione al DB");
         }
         return numDomande;
     }
-
-    public int esitoDomanda()
-    {
-        return 2;
-    }
-
-
 }

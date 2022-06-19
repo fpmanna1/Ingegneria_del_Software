@@ -6,19 +6,27 @@ import java.sql.Date;
 
 public class EntityLezioneGuida
 {
-    //public Clock ora;
-    //public final Duration durata = Duration.ofHours(2);
     private Date      data;
     private Time      ora;
-    private final int durata = 2;
-    private String    tipoPatente;
-    private String    oraPrenotazione; //prenotazione è quando il cliente ha effettivamente prenotato la lezione
-    private Date      dataPrenotazione;
+    private final int durata = 60; //minuti
 
-    public EntityLezioneGuida(Date data, String ora, String tipoPatente, String oraPrenotazione, Date dataPrenotazione)
+    /*Tipo patente da conseguire */
+    private String    tipoPatente;
+
+    public EntityLezioneGuida()
     {
-        //TODO
+        this.data = new Date(0);
+        this.ora = new Time(0);
+        this.tipoPatente = "";
     }
+
+    public EntityLezioneGuida(Date data, Time ora, String tipoPatente)
+    {
+        this.data = data;
+        this.ora = ora;
+        this.tipoPatente = tipoPatente;
+    }
+
 
     public Date getData() {
         return data;
@@ -46,21 +54,5 @@ public class EntityLezioneGuida
 
     public void setTipoPatente(String tipoPatente) {
         this.tipoPatente = tipoPatente;
-    }
-
-    public String getOraPrenotazione() {
-        return oraPrenotazione;
-    }
-
-    public void setOraPrenotazione(String oraPrenotazione) {
-        this.oraPrenotazione = oraPrenotazione;
-    }
-
-    public Date getDataPrenotazione() {
-        return dataPrenotazione;
-    }
-
-    public void setDataPrenotazione(Date dataPrenotazione) {
-        this.dataPrenotazione = dataPrenotazione;
     }
 }

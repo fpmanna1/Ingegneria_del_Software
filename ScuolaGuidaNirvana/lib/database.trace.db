@@ -1913,3 +1913,387 @@ Caused by: java.lang.NumberFormatException: For input string: "fpm@gmail"
 	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:190)
 	at org.h2.value.ValueDate.parse(ValueDate.java:51)
 	... 7 more
+2022-06-14 18:21:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO COMPOSIZIONE VALUES (?); [21002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.dml.Insert.doPrepare(Insert.java:295)
+	at org.h2.command.dml.DataChangeStatement.prepare(DataChangeStatement.java:37)
+	at org.h2.command.Parser.prepareCommand(Parser.java:574)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:92)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:288)
+	at Database.ComposizioneDAO.insertComposizione(ComposizioneDAO.java:19)
+	at Controller.GestioneScuolaGuida.insertComposizione(GestioneScuolaGuida.java:225)
+	at Boundary.BoundaryCliente.simulazioneProva(BoundaryCliente.java:123)
+	at Boundary.MainMenu.main(MainMenu.java:61)
+2022-06-14 19:06:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Function "PROVE" not found; SQL statement:
+SELECT MAX(PROVE(IDPROVA)) FROM PROVE [90022-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.command.Parser.readFunction(Parser.java:3894)
+	at org.h2.command.Parser.readTerm(Parser.java:5227)
+	at org.h2.command.Parser.readFactor(Parser.java:3440)
+	at org.h2.command.Parser.readSum(Parser.java:3427)
+	at org.h2.command.Parser.readConcat(Parser.java:3392)
+	at org.h2.command.Parser.readCondition(Parser.java:3177)
+	at org.h2.command.Parser.readExpression(Parser.java:3093)
+	at org.h2.command.Parser.readAggregate(Parser.java:3625)
+	at org.h2.command.Parser.readFunction(Parser.java:3874)
+	at org.h2.command.Parser.readTerm(Parser.java:5227)
+	at org.h2.command.Parser.readFactor(Parser.java:3440)
+	at org.h2.command.Parser.readSum(Parser.java:3427)
+	at org.h2.command.Parser.readConcat(Parser.java:3392)
+	at org.h2.command.Parser.readCondition(Parser.java:3177)
+	at org.h2.command.Parser.readExpression(Parser.java:3093)
+	at org.h2.command.Parser.parseSelectExpressions(Parser.java:2893)
+	at org.h2.command.Parser.parseSelect(Parser.java:2910)
+	at org.h2.command.Parser.parseQueryPrimary(Parser.java:2800)
+	at org.h2.command.Parser.parseQueryTerm(Parser.java:2667)
+	at org.h2.command.Parser.parseQueryExpressionBody(Parser.java:2646)
+	at org.h2.command.Parser.parseQueryExpressionBodyAndEndOfQuery(Parser.java:2639)
+	at org.h2.command.Parser.parseQueryExpression(Parser.java:2632)
+	at org.h2.command.Parser.parseQuery(Parser.java:2593)
+	at org.h2.command.Parser.parsePrepared(Parser.java:724)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-14 19:06:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT MAX PROVE[*](IDPROVA) FROM PROVE"; SQL statement:
+SELECT MAX PROVE(IDPROVA) FROM PROVE [42000-212]
+2022-06-14 19:16:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO PROVE(CLIENTE, DATA, ESITO) VALUES (?, ?, ?) [90002-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.command.Prepared.query(Prepared.java:235)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:256)
+	at org.h2.command.Command.executeQuery(Command.java:190)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:128)
+	at Database.ProvaDAO.createProva(ProvaDAO.java:31)
+	at Controller.GestioneScuolaGuida.memorizzaProva(GestioneScuolaGuida.java:214)
+	at Boundary.BoundaryCliente.simulazioneProva(BoundaryCliente.java:122)
+	at Boundary.MainMenu.main(MainMenu.java:61)
+2022-06-15 13:42:06 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO DOMANDE VALUES(1, NULL, 'Limiti di velocità', 'Ai passaggi a livello occorre usare la massima prudenza e moderare la velocità, per evitare situazioni di pericolo che comportino il danneggiamento delle attrezzature', 'v')\000d\000a\000d\000a[*]INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(3, NULL, 'Limiti di velocità', 'L eccessiva velocità in curva può determinare il ribaltamento del veicolo', 'V')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(4, NULL, 'Limiti di velocità', 'I tratti di strada in curva debbono essere percorsi con il pedale della frizione abbassato', 'F')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(5, 'https://domandescuolaguida.it/foto.jpeg', 'Limiti di velocità', 'I contrassegni rappresentati in figura sono applicati sulla parte posteriore di alcune categorie di veicoli', 'V')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(6,NULL, 'Norme veicoli', 'L uso corretto della strada comporta che i veicoli procedano ad una velocità adeguata alle condizioni della strada e del traffico', 'V')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(7,NULL, 'Norme veicoli', 'L uso corretto della strada comporta che si proceda a velocità elevata per non creare intralcio', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(8,NULL, 'Norme veicoli', 'Il carico sugli autoveicoli non deve superare la portata indicata nella carta di circolazione', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(9,NULL, 'Norme veicoli', 'Il carico deve essere segnalato, di giorno, con un panno rosso se sporge dalla parte posteriore', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(10,NULL, 'Norme veicoli', 'Sui motocicli in nessun caso è consentito trasportare un carico', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(11,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche al tipo di veicolo che segue', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(12,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche al limite di velocità riportato sul retro del veicolo che ci precede', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(13,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è una distanza fissa', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(14,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche alle condizioni psicofisiche del conducente', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(15,NULL, 'Distanza sicurezza', 'La distanza di sicurezza va rispettata per non tamponare il veicolo che ci precede', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(16,NULL, 'Fermata e sosta', 'L arresto è l interruzione della marcia del veicolo dovuta ad esigenze della circolazione, come ad esempio ad un semaforo rosso', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(17,NULL, 'Fermata e sosta', 'L arresto è la temporanea sospensione della marcia per esigenze del conducente o dei passeggeri di un veicolo', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(18,NULL, 'Fermata e sosta', 'La fermata per esigenze del conducente può avere la durata massima di dieci minuti', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(19,NULL, 'Fermata e sosta', 'La fermata di un veicolo è vietata se i passeggeri che scendono sono più di uno', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(20,NULL, 'Fermata e sosta', 'La fermata di un veicolo è la temporanea sospensione della marcia per consentire la salita o la discesa delle persone', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(21,'https://domandescuolaguida.it/foto.jpeg2', 'Segnali di obbligo', 'Il segnale raffigurato consente ai conducenti di passare sia a destra che a sinistra di un salvagente', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(22,'https://domandescuolaguida.it/foto.jpeg3', 'Segnali di obbligo', 'Il segnale raffigurato consente il passaggio da ambedue i lati dell ostacolo', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(23,'https://domandescuolaguida.it/foto.jpeg4', 'Segnali di obbligo', 'Il segnale raffigurato è, di norma, preceduto dal segnale ROTATORIA', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(24,'https://domandescuolaguida.it/foto.jpeg5', 'Segnali di obbligo', 'Il segnale raffigurato è un segnale di divieto', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(25,'https://domandescuolaguida.it/foto.jpeg6', 'Segnali di obbligo', 'Il segnale raffigurato indica al conducente gli unici passaggi consentiti', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(26,NULL, 'Norme varie', 'Sulle carreggiate, sulle rampe e sugli svincoli di autostrade e strade extraurbane principali è vietato invertire il senso di marcia e attraversare lo spartitraffico, anche all altezza dei varchi', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(27,NULL, 'Norme varie', 'Sulle carreggiate, sulle rampe e sugli svincoli di autostrade e strade extraurbane principali è vietato percorrere la carreggiata o parte di essa nel senso di marcia opposto a quello consentito', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(28,NULL, 'Norme varie', 'Sulle autostrade e strade extraurbane principali il conducente può utilizzare la corsia di emergenza se il traffico è intenso', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(29,NULL, 'Norme varie', 'Sulle autostrade e strade extraurbane principali il conducente può utilizzare la corsia di emergenza se il traffico è intenso', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(30,NULL, 'Norme varie', 'Sulle corsie per le soste di emergenza delle autostrade è vietato effettuare la retromarcia', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(31,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, occorre far controllare che il dispositivo silenziatore (marmitta) sia in buone condizioni di efficienza', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(32,NULL, 'Ambiente', 'L inquinamento acustico aumenta se si usano in modo eccessivo i dispositivi di segnalazione acustica (clacson, trombe)', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(33,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida non si deve frenare bruscamente, se non è strettamente necessario', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(34,NULL, 'Ambiente', 'Per evitare rumori fastidiosi non bisogna accelerare inutilmente e ripetutamente se il veicolo è fermo', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(35,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, si deve usare il clacson solamente per motivi di sicurezza stradale (trasporto feriti o ammalati, pericolo immediato)', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(36,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante le fermate dovute al traffico, occorre mantenere il motore acceso, accelerando ripetutamente', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(37,NULL, 'Ambiente', 'Per evitare rumori fastidiosi, occorre chiudere con forza le portiere dell autovettura, in modo da non doverle richiudere', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(38,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, occorre sostituire il clacson con le luci ad intermittenza, ma solamente di notte', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(39,NULL, 'Ambiente', 'Per diminuire l inquinamento atmosferico provocato dai veicoli, bisogna far sostituire periodicamente il filtro dell aria', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(40,NULL, 'Ambiente', 'Per diminuire l inquinamento dell aria non bisogna accelerare e frenare spesso durante la marcia del veicolo', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(41,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo mostrato in figura A indica i metri di strada già fatta', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(42,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato indica la pendenza di una strada', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(43,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo mostrato in figura A indica la distanza di sicurezza da mantenere dal veicolo che sta davanti', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(44,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato indica la larghezza di una strada', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(45,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato, posto sotto il segnale di pericolo, indica la lunghezza del tratto di strada pericoloso', 'f')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(46,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato, posto sotto un segnale di pericolo, indica la lunghezza del tratto di strada pericoloso', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(47,'https://foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato può essere posto sotto un segnale di divieto', 'v')\000d\000a\000d\000aINSERT INTO DOMANDE VALUES(48,'https://foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato può essere posto sotto un segnale di divieto', 'v')"; SQL statement:
+INSERT INTO DOMANDE VALUES(1, NULL, 'Limiti di velocità', 'Ai passaggi a livello occorre usare la massima prudenza e moderare la velocità, per evitare situazioni di pericolo che comportino il danneggiamento delle attrezzature', 'v')
+
+INSERT INTO DOMANDE VALUES(2, NULL, 'Limiti di velocità', 'E obbligatorio regolare la velocità nelle ore diurne ma non in quelle notturne', 'f')
+
+INSERT INTO DOMANDE VALUES(3, NULL, 'Limiti di velocità', 'L eccessiva velocità in curva può determinare il ribaltamento del veicolo', 'V')
+
+INSERT INTO DOMANDE VALUES(4, NULL, 'Limiti di velocità', 'I tratti di strada in curva debbono essere percorsi con il pedale della frizione abbassato', 'F')
+
+INSERT INTO DOMANDE VALUES(5, 'https://domandescuolaguida.it/foto.jpeg', 'Limiti di velocità', 'I contrassegni rappresentati in figura sono applicati sulla parte posteriore di alcune categorie di veicoli', 'V')
+
+INSERT INTO DOMANDE VALUES(6,NULL, 'Norme veicoli', 'L uso corretto della strada comporta che i veicoli procedano ad una velocità adeguata alle condizioni della strada e del traffico', 'V')
+
+INSERT INTO DOMANDE VALUES(7,NULL, 'Norme veicoli', 'L uso corretto della strada comporta che si proceda a velocità elevata per non creare intralcio', 'f')
+
+INSERT INTO DOMANDE VALUES(8,NULL, 'Norme veicoli', 'Il carico sugli autoveicoli non deve superare la portata indicata nella carta di circolazione', 'v')
+
+INSERT INTO DOMANDE VALUES(9,NULL, 'Norme veicoli', 'Il carico deve essere segnalato, di giorno, con un panno rosso se sporge dalla parte posteriore', 'f')
+
+INSERT INTO DOMANDE VALUES(10,NULL, 'Norme veicoli', 'Sui motocicli in nessun caso è consentito trasportare un carico', 'f')
+
+INSERT INTO DOMANDE VALUES(11,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche al tipo di veicolo che segue', 'f')
+
+INSERT INTO DOMANDE VALUES(12,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche al limite di velocità riportato sul retro del veicolo che ci precede', 'f')
+
+INSERT INTO DOMANDE VALUES(13,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è una distanza fissa', 'f')
+
+INSERT INTO DOMANDE VALUES(14,NULL, 'Distanza sicurezza', 'La distanza di sicurezza è commisurata anche alle condizioni psicofisiche del conducente', 'v')
+
+INSERT INTO DOMANDE VALUES(15,NULL, 'Distanza sicurezza', 'La distanza di sicurezza va rispettata per non tamponare il veicolo che ci precede', 'v')
+
+INSERT INTO DOMANDE VALUES(16,NULL, 'Fermata e sosta', 'L arresto è l interruzione della marcia del veicolo dovuta ad esigenze della circolazione, come ad esempio ad un semaforo rosso', 'v')
+
+INSERT INTO DOMANDE VALUES(17,NULL, 'Fermata e sosta', 'L arresto è la temporanea sospensione della marcia per esigenze del conducente o dei passeggeri di un veicolo', 'f')
+
+INSERT INTO DOMANDE VALUES(18,NULL, 'Fermata e sosta', 'La fermata per esigenze del conducente può avere la durata massima di dieci minuti', 'f')
+
+INSERT INTO DOMANDE VALUES(19,NULL, 'Fermata e sosta', 'La fermata di un veicolo è vietata se i passeggeri che scendono sono più di uno', 'f')
+
+INSERT INTO DOMANDE VALUES(20,NULL, 'Fermata e sosta', 'La fermata di un veicolo è la temporanea sospensione della marcia per consentire la salita o la discesa delle persone', 'v')
+
+INSERT INTO DOMANDE VALUES(21,'https://domandescuolaguida.it/foto.jpeg2', 'Segnali di obbligo', 'Il segnale raffigurato consente ai conducenti di passare sia a destra che a sinistra di un salvagente', 'v')
+
+INSERT INTO DOMANDE VALUES(22,'https://domandescuolaguida.it/foto.jpeg3', 'Segnali di obbligo', 'Il segnale raffigurato consente il passaggio da ambedue i lati dell ostacolo', 'v')
+
+INSERT INTO DOMANDE VALUES(23,'https://domandescuolaguida.it/foto.jpeg4', 'Segnali di obbligo', 'Il segnale raffigurato è, di norma, preceduto dal segnale ROTATORIA', 'v')
+
+INSERT INTO DOMANDE VALUES(24,'https://domandescuolaguida.it/foto.jpeg5', 'Segnali di obbligo', 'Il segnale raffigurato è un segnale di divieto', 'v')
+
+INSERT INTO DOMANDE VALUES(25,'https://domandescuolaguida.it/foto.jpeg6', 'Segnali di obbligo', 'Il segnale raffigurato indica al conducente gli unici passaggi consentiti', 'v')
+
+INSERT INTO DOMANDE VALUES(26,NULL, 'Norme varie', 'Sulle carreggiate, sulle rampe e sugli svincoli di autostrade e strade extraurbane principali è vietato invertire il senso di marcia e attraversare lo spartitraffico, anche all altezza dei varchi', 'v')
+
+INSERT INTO DOMANDE VALUES(27,NULL, 'Norme varie', 'Sulle carreggiate, sulle rampe e sugli svincoli di autostrade e strade extraurbane principali è vietato percorrere la carreggiata o parte di essa nel senso di marcia opposto a quello consentito', 'v')
+
+INSERT INTO DOMANDE VALUES(28,NULL, 'Norme varie', 'Sulle autostrade e strade extraurbane principali il conducente può utilizzare la corsia di emergenza se il traffico è intenso', 'v')
+
+INSERT INTO DOMANDE VALUES(29,NULL, 'Norme varie', 'Sulle autostrade e strade extraurbane principali il conducente può utilizzare la corsia di emergenza se il traffico è intenso', 'f')
+
+INSERT INTO DOMANDE VALUES(30,NULL, 'Norme varie', 'Sulle corsie per le soste di emergenza delle autostrade è vietato effettuare la retromarcia', 'v')
+
+INSERT INTO DOMANDE VALUES(31,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, occorre far controllare che il dispositivo silenziatore (marmitta) sia in buone condizioni di efficienza', 'v')
+
+INSERT INTO DOMANDE VALUES(32,NULL, 'Ambiente', 'L inquinamento acustico aumenta se si usano in modo eccessivo i dispositivi di segnalazione acustica (clacson, trombe)', 'v')
+
+INSERT INTO DOMANDE VALUES(33,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida non si deve frenare bruscamente, se non è strettamente necessario', 'v')
+
+INSERT INTO DOMANDE VALUES(34,NULL, 'Ambiente', 'Per evitare rumori fastidiosi non bisogna accelerare inutilmente e ripetutamente se il veicolo è fermo', 'v')
+
+INSERT INTO DOMANDE VALUES(35,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, si deve usare il clacson solamente per motivi di sicurezza stradale (trasporto feriti o ammalati, pericolo immediato)', 'v')
+
+INSERT INTO DOMANDE VALUES(36,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante le fermate dovute al traffico, occorre mantenere il motore acceso, accelerando ripetutamente', 'f')
+
+INSERT INTO DOMANDE VALUES(37,NULL, 'Ambiente', 'Per evitare rumori fastidiosi, occorre chiudere con forza le portiere dell autovettura, in modo da non doverle richiudere', 'f')
+
+INSERT INTO DOMANDE VALUES(38,NULL, 'Ambiente', 'Per evitare rumori fastidiosi durante la guida, occorre sostituire il clacson con le luci ad intermittenza, ma solamente di notte', 'f')
+
+INSERT INTO DOMANDE VALUES(39,NULL, 'Ambiente', 'Per diminuire l inquinamento atmosferico provocato dai veicoli, bisogna far sostituire periodicamente il filtro dell aria', 'v')
+
+INSERT INTO DOMANDE VALUES(40,NULL, 'Ambiente', 'Per diminuire l inquinamento dell aria non bisogna accelerare e frenare spesso durante la marcia del veicolo', 'v')
+
+INSERT INTO DOMANDE VALUES(41,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo mostrato in figura A indica i metri di strada già fatta', 'f')
+
+INSERT INTO DOMANDE VALUES(42,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato indica la pendenza di una strada', 'f')
+
+INSERT INTO DOMANDE VALUES(43,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo mostrato in figura A indica la distanza di sicurezza da mantenere dal veicolo che sta davanti', 'f')
+
+INSERT INTO DOMANDE VALUES(44,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato indica la larghezza di una strada', 'f')
+
+INSERT INTO DOMANDE VALUES(45,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato, posto sotto il segnale di pericolo, indica la lunghezza del tratto di strada pericoloso', 'f')
+
+INSERT INTO DOMANDE VALUES(46,'https.//foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato, posto sotto un segnale di pericolo, indica la lunghezza del tratto di strada pericoloso', 'v')
+
+INSERT INTO DOMANDE VALUES(47,'https://foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato può essere posto sotto un segnale di divieto', 'v')
+
+INSERT INTO DOMANDE VALUES(48,'https://foto.jpeg', 'Pannelli integrativi', 'Il pannello integrativo raffigurato può essere posto sotto un segnale di divieto', 'v') [42000-212]
+2022-06-15 13:43:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO DOMANDE VALUES(16,NULL, 'Fermata e sosta', 'L arresto è l interruzione della marcia del veicolo dovuta ad esigenze della circolazione, come ad esempio ad un semaforo rosso', 'v')\000d\000a\000d\000a[*]INSERT INTO DOMANDE VALUES(17,NULL, 'Fermata e sosta', 'L arresto è la temporanea sospensione della marcia per esigenze del conducente o dei passeggeri di un veicolo', 'f')"; SQL statement:
+INSERT INTO DOMANDE VALUES(16,NULL, 'Fermata e sosta', 'L arresto è l interruzione della marcia del veicolo dovuta ad esigenze della circolazione, come ad esempio ad un semaforo rosso', 'v')
+
+INSERT INTO DOMANDE VALUES(17,NULL, 'Fermata e sosta', 'L arresto è la temporanea sospensione della marcia per esigenze del conducente o dei passeggeri di un veicolo', 'f') [42000-212]
+2022-06-17 10:51:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COLOUMN" not found; SQL statement:
+alter table clienti
+alter coloumn username varchar(20) unique [42122-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:770)
+	at org.h2.command.Parser.columnIfTableExists(Parser.java:8907)
+	at org.h2.command.Parser.parseAlterTableAlter(Parser.java:8483)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:8469)
+	at org.h2.command.Parser.parseAlter(Parser.java:7522)
+	at org.h2.command.Parser.parsePrepared(Parser.java:747)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-17 10:51:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti\000d\000aalter column username varchar(20) [*]unique"; SQL statement:
+alter table clienti
+alter column username varchar(20) unique [42000-212]
+2022-06-17 10:51:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti\000d\000aalter column username varchar(20) [*]unique"; SQL statement:
+alter table clienti
+alter column username varchar(20) unique [42000-212]
+2022-06-17 10:52:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti\000d\000a[*]modify column username varchar(20) unique"; expected "., ADD, SET, RENAME, DROP, ALTER"; SQL statement:
+alter table clienti
+modify column username varchar(20) unique [42001-212]
+2022-06-17 10:54:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti\000d\000aalter column username set [*]unique"; SQL statement:
+alter table clienti
+alter column username set unique [42000-212]
+2022-06-17 10:54:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti\000d\000aalter column username set [*]unique"; SQL statement:
+alter table clienti
+alter column username set unique [42000-212]
+2022-06-17 10:56:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.NullPointerException: Cannot invoke ""String.length()"" because ""<parameter1>"" is null" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.message.DbException.toSQLException(DbException.java:367)
+	at org.h2.message.TraceObject.logAndConvert(TraceObject.java:365)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:225)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.NullPointerException: Cannot invoke "String.length()" because "<parameter1>" is null
+	at org.h2.util.ParserUtil.getTokenType(ParserUtil.java:680)
+	at org.h2.util.ParserUtil.isKeyword(ParserUtil.java:622)
+	at org.h2.command.Parser.isKeyword(Parser.java:5876)
+	at org.h2.command.Parser.readIfDataType1(Parser.java:6079)
+	at org.h2.command.Parser.readIfDataType(Parser.java:6040)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:6022)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:5897)
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:9328)
+	at org.h2.command.Parser.parseAlterTableAddColumn(Parser.java:8991)
+	at org.h2.command.Parser.parseAlterTable(Parser.java:8461)
+	at org.h2.command.Parser.parseAlter(Parser.java:7522)
+	at org.h2.command.Parser.parsePrepared(Parser.java:747)
+	at org.h2.command.Parser.parse(Parser.java:691)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:568)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	... 7 more
+2022-06-17 10:57:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Cannot drop "CLIENTI" because "CONSTRAINT_40F, CONSTRAINT_5E7, CONSTRAINT_48D" depends on it; SQL statement:
+drop table clienti [90107-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.command.ddl.DropTable.prepareDrop(DropTable.java:97)
+	at org.h2.command.ddl.DropTable.update(DropTable.java:121)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2022-06-17 10:58:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti \000d\000aalter column username set [*]unique"; SQL statement:
+alter table clienti 
+alter column username set unique [42000-212]
+2022-06-17 10:59:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "alter table clienti \000d\000aalter column USERNAME set [*]UNIQUE"; SQL statement:
+alter table clienti 
+alter column USERNAME set UNIQUE [42000-212]
+2022-06-17 22:33:27 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/nokia/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at Database.DBManager.getConnection(DBManager.java:17)
+	at Database.ClienteDAO.readCliente(ClienteDAO.java:19)
+	at Controller.GestioneScuolaGuida.readCliente(GestioneScuolaGuida.java:44)
+	at Boundary.MainMenu.main(MainMenu.java:42)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/nokia/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 21 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/nokia/canale_j_z-nirvana/ScuolaGuidaNirvana/lib/database.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 15 more
+2022-06-17 22:52:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into disponibilita ([*]'MONDAY', '17:00', 'C001')"; expected "identifier"; SQL statement:
+insert into disponibilita ('MONDAY', '17:00', 'C001') [42001-212]
+2022-06-17 23:26:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into iscrizioni values('CA00000AA', 'B', 2022-06-06[*]', null)"; SQL statement:
+insert into iscrizioni values('CA00000AA', 'B', 2022-06-06', null) [42000-212]
+2022-06-17 23:26:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into iscrizioni values('CA00000AA', 'B', 2022-06-06', 'null[*]')"; SQL statement:
+insert into iscrizioni values('CA00000AA', 'B', 2022-06-06', 'null') [42000-212]
+2022-06-17 23:26:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into iscrizioni values('CA00000AA', 'B', 2022-06-06', 'null[*]');"; SQL statement:
+insert into iscrizioni values('CA00000AA', 'B', 2022-06-06', 'null'); [42000-212]
+2022-06-17 23:27:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Cannot parse "DATE" constant "null"; SQL statement:
+insert into iscrizioni values('CA00000AA', 'B', '2022-06-06', 'null') [22007-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:506)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.value.ValueDate.parse(ValueDate.java:53)
+	at org.h2.value.Value.convertToDate(Value.java:1854)
+	at org.h2.value.Value.convertTo(Value.java:1147)
+	at org.h2.value.Value.convertForAssignTo(Value.java:1092)
+	at org.h2.table.Column.validateConvertUpdateSequence(Column.java:369)
+	at org.h2.table.Table.convertInsertRow(Table.java:931)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:167)
+	at org.h2.command.dml.Insert.update(Insert.java:135)
+	at org.h2.command.dml.DataChangeStatement.update(DataChangeStatement.java:74)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:174)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:189)
+	at org.h2.server.web.WebThread.run(WebThread.java:102)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.IllegalArgumentException: null
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:187)
+	at org.h2.value.ValueDate.parse(ValueDate.java:51)
+	... 19 more
+2022-06-17 23:28:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into patentiinpossesso([*]'A', 'CA00000AA', '1990-12-12')"; expected "identifier"; SQL statement:
+insert into patentiinpossesso('A', 'CA00000AA', '1990-12-12') [42001-212]
+2022-06-17 23:28:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "insert into patentiinpossesso([*]'A', 'CA00000AA', '1990-12-12')"; expected "identifier"; SQL statement:
+insert into patentiinpossesso('A', 'CA00000AA', '1990-12-12') [42001-212]
+2022-06-17 23:30:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PATENTINPOSSESSO" not found; SQL statement:
+insert into patentinpossesso values('A', 'CA00000AA', '2005-01-01') [42102-212]
