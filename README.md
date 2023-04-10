@@ -5,5 +5,6 @@ Il progetto riguarda lo sviluppo di un software per la gestione di una scuola gu
 * registrazione di un nuovo cliente;
 * prenotazione di una lezione di guida;
 * simulazione di un quiz. 
-* 
+
+
 Il progetto è stato realizzato mediante linguaggio JAVA e pattern BCED.
